@@ -25,12 +25,12 @@ export const EtsyNewsletter = {
     // Top Nav
     logoSrc: '/images/etsy logo.gif',
     logoHref: 'https://www.etsy.com',
-    navLink1Href: 'https://www.etsy.com/shop',
-    navLink1Text: 'Shop',
-    navLink2Href: 'https://www.etsy.com/sell',
-    navLink2Text: 'Sell',
-    navLink3Href: 'https://www.etsy.com/gifts',
-    navLink3Text: 'Gifts',
+    navLink1Href: 'https://www.etsy.com/cyber-deals',
+    navLink1Text: 'Cyber Deals',
+    navLink2Href: 'https://www.etsy.com/gift-ideas',
+    navLink2Text: 'Gift Ideas',
+    navLink3Href: 'https://www.etsy.com/holiday-hub',
+    navLink3Text: 'Holiday Hub',
     
     // Promo Ribbon
     promoImageSrc: '/images/banner.gif',
@@ -52,11 +52,12 @@ export const EtsyNewsletter = {
     expertQuote: 'These handpicked items represent the best of what Etsy has to offer this season.',
     
     // Promo Banner
-    promoBannerHeadline: 'Free shipping on orders $35+',
-    promoBannerCopy: 'Save on shipping costs when you shop your favorite items.',
+    promoBannerHeadline: 'Cyber Specials: Get up to 60% off*',
+    promoBannerCopy: '',
     
     // Footer
     socialHeadline: "Let's be friends",
+    appBadgeHeadline: 'Download the Etsy app',
     companyName: 'Etsy, Inc.',
     companyAddress: '117 Adams Street, Brooklyn, NY 11201'
   },
@@ -80,6 +81,9 @@ export const EtsyNewsletter = {
     // Promo Banner controls
     promoBannerHeadline: { control: 'text' },
     promoBannerCopy: { control: 'text' },
+    
+    // App Badges controls
+    appBadgeHeadline: { control: 'text' },
   },
   render: (args) => (
     <div style={{ maxWidth: '600px', margin: '0 auto', backgroundColor: '#FAF8F5', fontFamily: 'Helvetica, Arial, sans-serif' }}>
@@ -160,7 +164,7 @@ export const EtsyNewsletter = {
       />
       
       <PromoBanner 
-        imageSrc="/images/shapeImage.png"
+        imageSrc="/images/bannerImage.png"
         headline={args.promoBannerHeadline}
         copy={args.promoBannerCopy}
         linkText="Learn more"
@@ -182,6 +186,7 @@ export const EtsyNewsletter = {
       />
       
       <AppBadges 
+        headline={args.appBadgeHeadline}
         appStoreSrc="/images/AppsStoreButton.png"
         googlePlaySrc="/images/GooglePlayButton.png"
       />

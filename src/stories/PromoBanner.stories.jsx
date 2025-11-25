@@ -20,7 +20,7 @@ export default {
 
 export const Interactive = {
   args: {
-    imageSrc: '/images/shapeImage.png',
+    imageSrc: '/images/bannerImage.png',
     headline: 'Free shipping on orders $35+',
     copy: 'Save on shipping costs when you shop your favorite items. Limited time offer.',
     href: 'https://www.etsy.com/learn-more',

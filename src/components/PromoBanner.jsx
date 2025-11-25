@@ -15,11 +15,10 @@ export const PromoBanner = ({
             <table role="presentation" cellPadding="0" cellSpacing="0">
               <tbody>
                 <tr>
-                  <td style={{ paddingRight: '16px', verticalAlign: 'top' }}>
+                  <td style={{ paddingRight: '16px', verticalAlign: 'middle' }}>
                     <img 
                       src={imageSrc} 
-                      width="40" 
-                      height="40"
+                      width="256"
                       alt=""
                       style={{ 
                         display: 'block', 
@@ -27,7 +26,7 @@ export const PromoBanner = ({
                       }}
                     />
                   </td>
-                  <td style={{ verticalAlign: 'top' }}>
+                  <td style={{ verticalAlign: 'middle' }}>
                     <div style={{ 
                       margin: 0, 
                       font: '700 18px Helvetica,Arial,sans-serif', 
@@ -66,7 +65,7 @@ export const PromoBanner = ({
 };
 
 export const PromoBannerHTML = (imageSrc = '', headline = '', copy = '', href = '#', linkText = 'Learn more') => {
-  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="padding:40px 0 0;"><tr><td style="background-color:#F7D5DA;padding:24px 16px;"><table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="padding-right:16px;vertical-align:top;"><img src="${imageSrc}" width="40" height="40" alt="" style="display:block;border:0;"/></td><td style="vertical-align:top;"><div style="margin:0;font:700 18px Helvetica,Arial,sans-serif;line-height:130%;color:#332F2E;">${headline}</div><div style="margin:8px 0 0;font:400 14px Helvetica,Arial,sans-serif;line-height:145%;color:#332F2E;">${copy}</div><a href="${href}" style="display:inline-block;margin-top:12px;font:700 14px Helvetica,Arial,sans-serif;line-height:130%;color:#332F2E;text-decoration:underline;">${linkText}</a></td></tr></table></td></tr></table>`;
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="padding:40px 0 0;"><tr><td style="background-color:#F7D5DA;padding:24px 16px;"><table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="padding-right:16px;vertical-align:middle;"><img src="${imageSrc}" width="256" alt="" style="display:block;border:0;"/></td><td style="vertical-align:middle;"><div style="margin:0;font:700 18px Helvetica,Arial,sans-serif;line-height:130%;color:#332F2E;">${headline}</div><div style="margin:8px 0 0;font:400 14px Helvetica,Arial,sans-serif;line-height:145%;color:#332F2E;">${copy}</div><a href="${href}" style="display:inline-block;margin-top:12px;font:700 14px Helvetica,Arial,sans-serif;line-height:130%;color:#332F2E;text-decoration:underline;">${linkText}</a></td></tr></table></td></tr></table>`;
 };
 
 export default PromoBanner;
