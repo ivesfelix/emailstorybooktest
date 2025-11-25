@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "storybook": "./node_modules/.bin/sb dev -p 6006",
-    "build-storybook": "./node_modules/.bin/sb build",
+    "build-storybook": "BASE_PATH=/emailstorybooktest/ ./node_modules/.bin/sb build",
     "dev": "vite"
   },
   "dependencies": {
