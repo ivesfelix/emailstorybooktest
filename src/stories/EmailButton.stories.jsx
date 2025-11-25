@@ -32,6 +32,7 @@ export default {
 };
 
 export const Interactive = {
+  render: (args) => <EmailButton {...args} />,
   args: {
     children: 'Click Here',
     href: 'https://example.com',

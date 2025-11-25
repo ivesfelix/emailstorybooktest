@@ -31,6 +31,7 @@ export default {
 };
 
 export const Interactive = {
+  render: (args) => <EmailHeader {...args} />,
   args: {
     title: 'Monthly Newsletter',
     subtitle: 'Latest updates and tips',
