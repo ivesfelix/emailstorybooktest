@@ -4,7 +4,10 @@ module.exports = {
     options: {}
   },
   stories: ['../src/**/*.stories.@(js|jsx|mdx)'],
-  addons: ['@storybook/addon-essentials'],
+  addons: [
+    '@storybook/addon-essentials',
+    '@whitespace/storybook-addon-html'
+  ],
   managerHead: (head) => `
     ${head}
     <base href="${process.env.BASE_PATH || '/'}" />
