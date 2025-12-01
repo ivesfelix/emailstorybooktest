@@ -30,8 +30,16 @@ module.exports = {
     </style>
   `,
   viteFinal: (config) => {
-    config.base = process.env.BASE_PATH || '/';
+    const basePath = process.env.BASE_PATH || '/';
+    config.base = basePath;
+    
+    // Ensure static files are served from the correct path
+    if (basePath !== '/') {
+      config.build = config.build || {};
+      config.build.assetsDir = 'assets';
+    }
+    
     return config;
   },
-  staticDirs: ['../public']
+  staticDirs: [{ from: '../public', to: '/' }]
 };
