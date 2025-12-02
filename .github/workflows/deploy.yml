@@ -31,7 +31,17 @@ jobs:
         run: npm ci
 
       - name: Build Storybook
+        env:
+          # Set the base path for assets to the repository name; e.g. /emailstorybooktest/
+          BASE_PATH: "/${{ github.event.repository.name }}/"
         run: npm run build-storybook
+
+      - name: Verify Storybook build output
+        run: |
+          echo "Listing storybook-static contents..."
+          ls -la storybook-static
+          echo "Index html preview (first 20 lines):"
+          head -n 20 storybook-static/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
