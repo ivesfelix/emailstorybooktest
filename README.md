@@ -28,7 +28,7 @@ To enable GitHub Pages:
 1. Go to your repository Settings → Pages
 2. Under "Build and deployment", set Source to "GitHub Actions"
 3. Push to `main` — the workflow will build and deploy Storybook
-4. Your site will be live at `https://danrader.github.io/emailstorybooktest/`
+4. Your site will be live at `https://testy.ivettefelixuy.com`
 
 ## Project Structure
 

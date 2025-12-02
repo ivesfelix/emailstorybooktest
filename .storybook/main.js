@@ -10,7 +10,7 @@ module.exports = {
   ],
   managerHead: (head) => `
     ${head}
-    <base href="${process.env.BASE_PATH || '/'}" />
+    <base href="/" />
     <style>
       /* HTML addon styling - override emotion styles */
       #storybook-panel-root [data-lang],
@@ -31,18 +31,10 @@ module.exports = {
   `,
   previewHead: (head) => `
     ${head}
-    <base href="${process.env.BASE_PATH || '/'}" />
+    <base href="/" />
   `,
   viteFinal: (config) => {
-    const basePath = process.env.BASE_PATH || '/';
-    config.base = basePath;
-    
-    // Ensure static files are served from the correct path
-    if (basePath !== '/') {
-      config.build = config.build || {};
-      config.build.assetsDir = 'assets';
-    }
-    
+    config.base = '/';
     return config;
   },
   staticDirs: [{ from: '../public', to: '/' }]

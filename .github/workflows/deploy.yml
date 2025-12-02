@@ -32,8 +32,7 @@ jobs:
 
       - name: Build Storybook
         env:
-          # Set the base path for assets to the repository name; e.g. /emailstorybooktest/
-          BASE_PATH: "/${{ github.event.repository.name }}/"
+          BASE_PATH: "/"
         run: npm run build-storybook
 
       - name: Verify Storybook build output
