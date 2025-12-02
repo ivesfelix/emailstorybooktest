@@ -2,7 +2,7 @@ import React from 'react';
 import { PersonalizedHero, PersonalizedHeroHTML } from '../components/PersonalizedHero';
 
 export default {
-  title: 'Etsy Components/PersonalizedHero',
+  title: 'Components/PersonalizedHero',
   component: PersonalizedHero,
   parameters: {
     layout: 'centered',
@@ -23,10 +23,10 @@ export default {
 
 export const Interactive = {
   args: {
-    imageHref: 'https://www.etsy.com/invitations',
-    imageSrc: '/images/headline image.jpg',
-    headlineHref: 'https://www.etsy.com/invitations',
-    headline: 'Next up for you: Invitations',
+    imageHref: 'https://www.etsy.com/',
+    imageSrc: 'https://i.etsystatic.com/7721451/r/il/af962a/7354499205/il_1588xN.7354499205_3uxg.jpg',
+    headlineHref: 'https://www.etsy.com/',
+    headline: 'Next up for you: Dollhouse Miniatures',
     copyHref: 'https://www.etsy.com/personalized',
     copy: 'Discover your personalized roundup of Etsy finds, here to brighten your day.',
     ctaHref: 'https://www.etsy.com/shop-now',

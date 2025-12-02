@@ -2,18 +2,18 @@ import React from 'react';
 
 const variantStyles = {
   primary: {
-    background: '#332F2E',
-    border: '2px solid #332F2E',
+    background: '#312B36',
+    border: '1.5px solid #312B36',
     color: '#FAF8F5'
   },
   secondary: {
     background: '#FAF8F5',
-    border: '2px solid #332F2E',
-    color: '#332F2E'
+    border: '1.5px solid #312B36',
+    color: '#312B36'
   }
 };
 
-export const EtsyCTA = ({ 
+export const CTA = ({ 
   href = '#', 
   children = 'Button', 
   variant = 'primary'
@@ -30,7 +30,7 @@ export const EtsyCTA = ({
         background: styles.background,
         border: styles.border,
         color: styles.color,
-        font: '700 18px Helvetica,Arial,sans-serif',
+        font: '700 18px "ABC Diatype"',
         lineHeight: '130%',
         textDecoration: 'none'
       }}
@@ -40,10 +40,10 @@ export const EtsyCTA = ({
   );
 };
 
-export const EtsyCTAHTML = (label = 'Button', href = '#', variant = 'primary') => {
+export const CTAHTML = (label = 'Button', href = '#', variant = 'primary') => {
   const styles = variantStyles[variant] || variantStyles.primary;
   
-  return `<a href="${href}" style="display:inline-block;padding:10.5px 32px;border-radius:24px;background:${styles.background};border:${styles.border};color:${styles.color};font:700 18px Helvetica,Arial,sans-serif;line-height:130%;text-decoration:none;">${label}</a>`;
+  return `<a href="${href}" style="display:inline-block;padding:10.5px 32px;border-radius:24px;background:${styles.background};border:${styles.border};color:${styles.color};font:700 18px \"ABC Diatype\";line-height:130%;text-decoration:none;">${label}</a>`;
 };
 
-export default EtsyCTA;
+export default CTA;

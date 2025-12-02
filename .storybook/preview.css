@@ -1,0 +1,45 @@
+/* Custom Storybook preview styles and fonts */
+
+/* Fonts */
+/* ABC Diatype  */
+
+@font-face {
+  font-family: 'ABC Diatype';
+  font-style: normal;
+  font-weight: normal;
+  src: 
+    url(https://www.etsy.com/assets/type/ABCDiatype-Regular.woff2) format('woff2'),
+    url(https://www.etsy.com/assets/type/ABCDiatype-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'ABC Diatype';
+  font-style: normal;
+  font-weight: 500;
+  src: 
+    url(https://www.etsy.com/assets/type/ABCDiatype-Medium.woff2) format('woff2'),
+    url(https://www.etsy.com/assets/type/ABCDiatype-Medium.woff) format('woff');
+}
+@font-face {
+  font-family: 'ABC Diatype';
+  font-style: normal;
+  font-weight: 700;
+  src: 
+    url(https://www.etsy.com/assets/type/ABCDiatype-Bold.woff2) format('woff2'),
+    url(https://www.etsy.com/assets/type/ABCDiatype-Bold.woff) format('woff');
+}
+
+/* ABC Otto  */
+
+@font-face {
+  font-family: 'ABC Otto';
+  font-style: normal;
+  font-weight: 400;
+  src: 
+    url(https://www.etsy.com/assets/type/ABCOtto-Regular.woff2) format('woff2'),
+    url(https://www.etsy.com/assets/type/ABCOtto-Regular.woff) format('woff');
+}
+
+/* Apply font to Storybook preview body */
+body {
+  font-family: "ABC Diatype";
+}

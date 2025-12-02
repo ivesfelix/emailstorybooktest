@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import './preview.css';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

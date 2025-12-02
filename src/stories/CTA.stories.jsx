@@ -1,13 +1,13 @@
 import React from 'react';
-import { EtsyCTA, EtsyCTAHTML } from '../components/EtsyCTA';
+import { CTA, CTAHTML } from '../components/CTA';
 
 export default {
-  title: 'Etsy Components/EtsyCTA',
-  component: EtsyCTA,
+  title: 'Components/CTA',
+  component: CTA,
   parameters: {
     layout: 'centered',
     html: {
-      transform: (code, story) => EtsyCTAHTML(
+      transform: (code, story) => CTAHTML(
         story.args.children,
         story.args.href,
         story.args.variant
@@ -30,7 +30,7 @@ export const Interactive = {
       options: ['primary', 'secondary']
     }
   },
-  render: (args) => <EtsyCTA {...args} />
+  render: (args) => <CTA {...args} />
 };
 
 export const Primary = {
@@ -39,7 +39,7 @@ export const Primary = {
     href: '#',
     variant: 'primary'
   },
-  render: (args) => <EtsyCTA {...args} />
+  render: (args) => <CTA {...args} />
 };
 
 export const Secondary = {
@@ -48,5 +48,5 @@ export const Secondary = {
     href: '#',
     variant: 'secondary'
   },
-  render: (args) => <EtsyCTA {...args} />
+  render: (args) => <CTA {...args} />
 };
