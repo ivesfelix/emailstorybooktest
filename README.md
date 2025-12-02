@@ -2,7 +2,7 @@
 
 This workspace scaffolds a Storybook environment tailored for building and previewing email modules and templates.
 
-**[View Live Demo](https://danrader.github.io/emailstorybooktest/)**
+**[View Live Demo](https://testy.ivettefelixuy.com)**
 
 Quick start:
 
