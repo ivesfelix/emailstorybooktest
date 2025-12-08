@@ -111,11 +111,6 @@ export default {
       control: 'text',
       description: 'Evergreen section link URL',
       table: { category: 'Evergreen Section' }
-    },
-    templateTitle: {
-      control: 'text',
-      description: 'Title shown in Storybook preview header',
-      table: { category: 'Display' }
     }
   }
 };
@@ -137,8 +132,7 @@ export const Default = {
     evergreenHeading: 'Shop straight from their studio',
     evergreenDescription: '97% of Etsy sellers in the US work and create from their own home.',
     evergreenLinkText: 'Explore more →',
-    evergreenLinkHref: '#',
-    templateTitle: 'Etsy Curated for You Email Template'
+    evergreenLinkHref: '#'
   },
   render: (args) => <EmailTemplate {...args} />
 };
