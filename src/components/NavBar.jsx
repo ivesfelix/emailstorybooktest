@@ -1,4 +1,5 @@
 import React from 'react';
+import { getEmailStyles, getEmailClosingTags } from './EmailStyles';
 
 export const generateNavBarHTML = ({
   logoSrc = 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c190e17c507e0064a9a366/original.png',
@@ -14,11 +15,16 @@ export const generateNavBarHTML = ({
   showNavLink3 = true,
   navLink3Text = 'Deals',
   navLink3Href = '#',
+  leftPadding = '32px',
 }) => {
-  return `
-    <!-- Nav Bar -->
+  const rightPadding = '32px';
+  const mobilePaddingStyle = leftPadding === '0' ? `padding-left: 0 !important; padding-right: 16px !important;` : `padding-left: 16px !important; padding-right: 16px !important;`;
+  
+  return `${getEmailStyles()}
+            
+            <!-- Nav Bar -->
     <tr>
-        <td style="padding: 0 32px;" class="mobile-padding">
+        <td style="padding: 0 ${rightPadding} 0 ${leftPadding};" class="mobile-padding-nav">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
                     <td width="${logoWidth}" style="padding: 0; vertical-align: middle;">
@@ -50,7 +56,8 @@ export const generateNavBarHTML = ({
             </table>
         </td>
     </tr>
-  `;
+    
+${getEmailClosingTags()}`;
 };
 
 export const NavBar = (props) => {

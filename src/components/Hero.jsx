@@ -1,4 +1,5 @@
 import React from 'react';
+import { getEmailStyles, getEmailClosingTags } from './EmailStyles';
 
 export const generateHeroHTML = ({
   h1 = 'Curated for you: Dollhouse Miniatures',
@@ -12,8 +13,9 @@ export const generateHeroHTML = ({
   primaryButtonText = 'Shop now',
   primaryButtonHref = '#',
 }) => {
-  return `
-    <!-- Hero Section -->
+  return `${getEmailStyles()}
+            
+            <!-- Hero Section -->
     <tr>
         <td style="padding: 24px 32px 40px 32px;" class="mobile-padding-hero">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
@@ -69,7 +71,8 @@ export const generateHeroHTML = ({
             </table>
         </td>
     </tr>
-  `;
+    
+${getEmailClosingTags()}`;
 };
 
 export const Hero = (props) => {

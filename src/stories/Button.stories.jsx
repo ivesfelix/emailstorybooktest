@@ -24,21 +24,46 @@ export default {
       options: ['primary', 'secondary'],
       description: 'Button style type',
     },
+    alignment: {
+      control: { type: 'select' },
+      options: ['left', 'center'],
+      description: 'Button alignment',
+    },
   },
 };
 
-export const PrimaryButton = {
+export const PrimaryButtonLeft = {
   args: {
     buttonText: 'Shop now',
     buttonHref: '#',
     buttonType: 'primary',
+    alignment: 'left',
   },
 };
 
-export const SecondaryButton = {
+export const SecondaryButtonLeft = {
   args: {
-    buttonText: 'See more',
+    buttonText: 'Shop now',
     buttonHref: '#',
     buttonType: 'secondary',
+    alignment: 'left',
+  },
+};
+
+export const PrimaryButtonCentered = {
+  args: {
+    buttonText: 'Shop now',
+    buttonHref: '#',
+    buttonType: 'primary',
+    alignment: 'center',
+  },
+};
+
+export const SecondaryButtonCentered = {
+  args: {
+    buttonText: 'Shop now',
+    buttonHref: '#',
+    buttonType: 'secondary',
+    alignment: 'center',
   },
 };

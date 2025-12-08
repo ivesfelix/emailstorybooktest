@@ -1,4 +1,5 @@
 import React from 'react';
+import { getEmailStyles, getEmailClosingTags } from './EmailStyles';
 
 export const generateFooterHTML = ({
   logoSrc = 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c19142f918b60065ae9302/original.png',
@@ -16,14 +17,11 @@ export const generateFooterHTML = ({
   appLabel = 'Download the Etsy app',
   appStoreHref = '#',
   googlePlayHref = '#',
-  legalText1 = 'If you live in North America or South America, this email is sent by Etsy, Inc., 117 Adams Street, Brooklyn, NY, 11201, US; if you live elsewhere, this email is sent by Etsy Ireland UC, a subsidiary of Etsy, Inc., One Le Pole Square, Ship Street Great, Dublin 8, D08 E6PD, Ireland having company registration number 495696 and VAT registration number IE9777587C.',
-  legalText2 = 'You are receiving this email because you registered on',
-  legalText2Link = 'Etsy.com',
-  legalText2LinkHref = '#',
-  legalText3 = 'Copyright 2025 Etsy, Inc., an affiliate of Etsy Ireland UC. All rights reserved.',
+  legalText = '<p style="margin: 0 0 1.25em 0;">You are receiving this email because you registered on <a href="#" style="color: #665e5c; text-decoration: underline;">Etsy.com</a> with this email address.</p><p style="margin: 0 0 1.25em 0;">If you live in North America or South America, this email is sent by Etsy, Inc., 117 Adams Street, Brooklyn, NY, 11201, US; if you live elsewhere, this email is sent by Etsy Ireland UC, a subsidiary of Etsy, Inc., One Le Pole Square, Ship Street Great, Dublin 8, D08 E6PD, Ireland having company registration number 495696 and VAT registration number IE9777587C.</p><p style="margin: 0;">Copyright 2025 Etsy, Inc., an affiliate of Etsy Ireland UC. All rights reserved.</p>',
 }) => {
-  return `
-    <!-- Footer -->
+  return `${getEmailStyles()}
+            
+            <!-- Footer -->
     <tr>
         <td style="padding: 24px 32px 40px 32px; background-color: #faf8f5;" class="mobile-padding-footer footer-section">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
@@ -110,15 +108,14 @@ export const generateFooterHTML = ({
                 <!-- Legal Text -->
                 <tr>
                     <td style="font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #665e5c;" class="text-secondary">
-                        <p style="margin: 0 0 1.25em 0;">${legalText1}</p>
-                        <p style="margin: 0 0 1.25em 0;">${legalText2} <a href="${legalText2LinkHref}" style="color: #665e5c; text-decoration: underline;">${legalText2Link}</a> with this email address.</p>
-                        <p style="margin: 0;">${legalText3}</p>
+                        ${legalText}
                     </td>
                 </tr>
             </table>
         </td>
     </tr>
-  `;
+    
+${getEmailClosingTags()}`;
 };
 
 export const Footer = (props) => {

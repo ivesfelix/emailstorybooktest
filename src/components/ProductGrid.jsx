@@ -1,4 +1,5 @@
 import React from 'react';
+import { getEmailStyles, getEmailClosingTags } from './EmailStyles';
 
 export const generateProductGridHTML = ({
   gridRows = 2,
@@ -22,8 +23,9 @@ export const generateProductGridHTML = ({
   grid6Title = 'Product Title',
   grid6Price = '$25.00',
 }) => {
-  return `
-    <!-- Product Grid Section -->
+  return `${getEmailStyles()}
+            
+            <!-- Product Grid Section -->
     <tr>
         <td style="padding: 0 32px 24px 32px;" class="mobile-padding-grid">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
@@ -115,7 +117,8 @@ export const generateProductGridHTML = ({
             </table>
         </td>
     </tr>
-  `;
+    
+${getEmailClosingTags()}`;
 };
 
 export const ProductGrid = (props) => {

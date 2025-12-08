@@ -86,35 +86,15 @@ export default {
       description: 'Google Play URL',
       table: { category: 'App Download' }
     },
-    legalText1: {
+    legalText: {
       control: 'text',
-      description: 'First paragraph of legal text',
-      table: { category: 'Legal' }
-    },
-    legalText2: {
-      control: 'text',
-      description: 'Second paragraph of legal text',
-      table: { category: 'Legal' }
-    },
-    legalText2Link: {
-      control: 'text',
-      description: 'Link text in second paragraph',
-      table: { category: 'Legal' }
-    },
-    legalText2LinkHref: {
-      control: 'text',
-      description: 'Link URL in second paragraph',
-      table: { category: 'Legal' }
-    },
-    legalText3: {
-      control: 'text',
-      description: 'Third paragraph of legal text',
+      description: 'Legal text (can include HTML with paragraph tags)',
       table: { category: 'Legal' }
     },
   },
 };
 
-export const Default = {
+export const BuyerTransactional = {
   args: {
     logoSrc: 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c19142f918b60065ae9302/original.png',
     logoAlt: 'Etsy',
@@ -131,10 +111,27 @@ export const Default = {
     appLabel: 'Download the Etsy app',
     appStoreHref: '#',
     googlePlayHref: '#',
-    legalText1: 'If you live in North America or South America, this email is sent by Etsy, Inc., 117 Adams Street, Brooklyn, NY, 11201, US; if you live elsewhere, this email is sent by Etsy Ireland UC, a subsidiary of Etsy, Inc., One Le Pole Square, Ship Street Great, Dublin 8, D08 E6PD, Ireland having company registration number 495696 and VAT registration number IE9777587C.',
-    legalText2: 'You are receiving this email because you registered on',
-    legalText2Link: 'Etsy.com',
-    legalText2LinkHref: '#',
-    legalText3: 'Copyright 2025 Etsy, Inc., an affiliate of Etsy Ireland UC. All rights reserved.',
+    legalText: '<p style="margin: 0 0 1.25em 0;">You are receiving this email because you registered on <a href="#" style="color: #665e5c; text-decoration: underline;">Etsy.com</a> with this email address.</p><p style="margin: 0 0 1.25em 0;">If you live in North America or South America, this email is sent by Etsy, Inc., 117 Adams Street, Brooklyn, NY, 11201, US; if you live elsewhere, this email is sent by Etsy Ireland UC, a subsidiary of Etsy, Inc., One Le Pole Square, Ship Street Great, Dublin 8, D08 E6PD, Ireland having company registration number 495696 and VAT registration number IE9777587C.</p><p style="margin: 0;">Copyright 2025 Etsy, Inc., an affiliate of Etsy Ireland UC. All rights reserved.</p>',
+  },
+};
+
+export const BuyerMarketing = {
+  args: {
+    logoSrc: 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c19142f918b60065ae9302/original.png',
+    logoAlt: 'Etsy',
+    logoWidth: 63,
+    logoHeight: 32,
+    showSocialSection: true,
+    socialLabel: "Let's be friends",
+    instagramHref: '#',
+    facebookHref: '#',
+    threadsHref: '#',
+    pinterestHref: '#',
+    tiktokHref: '#',
+    showAppSection: true,
+    appLabel: 'Download the Etsy app',
+    appStoreHref: '#',
+    googlePlayHref: '#',
+    legalText: '<p style="margin: 0 0 1.25em 0;">You are receiving this email because you registered on Etsy.com with this email address. To stop receiving Etsy marketing emails, <a href="#" style="color: #665e5c; text-decoration: underline;">unsubscribe here</a>.</p><p style="margin: 0 0 1.25em 0;">If you live in North America or South America, this email is sent by Etsy, Inc., 117 Adams Street, Brooklyn, NY, 11201, US; if you live elsewhere, this email is sent by Etsy Ireland UC, a subsidiary of Etsy, Inc., One Le Pole Square, Ship Street Great, Dublin 8, D08 E6PD, Ireland having company registration number 495696 and VAT registration number IE9777587C.</p><p style="margin: 0;">Copyright 2025 Etsy, Inc., an affiliate of Etsy Ireland UC. All rights reserved.</p>',
   },
 };

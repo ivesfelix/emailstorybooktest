@@ -1,4 +1,5 @@
 import React from 'react';
+import { getEmailStyles, getEmailClosingTags } from './EmailStyles';
 
 export const generateEvergreenModuleHTML = ({
   evergreenHeading = 'Shop straight from their studio',
@@ -10,8 +11,9 @@ export const generateEvergreenModuleHTML = ({
   evergreenIconWidth = 100,
   evergreenIconHeight = 100,
 }) => {
-  return `
-    <!-- Evergreen Module -->
+  return `${getEmailStyles()}
+            
+            <!-- Evergreen Module -->
     <tr>
         <td style="padding: 40px 32px; background-color: #ded3e8;" class="mobile-padding-evergreen evergreen-section">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
@@ -42,7 +44,8 @@ export const generateEvergreenModuleHTML = ({
             </table>
         </td>
     </tr>
-  `;
+    
+${getEmailClosingTags()}`;
 };
 
 export const EvergreenModule = (props) => {

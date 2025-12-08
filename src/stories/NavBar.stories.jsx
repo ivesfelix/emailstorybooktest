@@ -76,6 +76,11 @@ export default {
       description: 'Nav link 3 URL',
       table: { category: 'Links', subcategory: 'Link 3' }
     },
+    leftPadding: {
+      control: 'text',
+      description: 'Left padding (e.g., 32px, 0)',
+      table: { category: 'Layout' }
+    },
   },
 };
 
@@ -94,5 +99,22 @@ export const Default = {
     showNavLink3: true,
     navLink3Text: 'Deals',
     navLink3Href: '#',
+    leftPadding: '32px',
+  },
+};
+
+export const NoLinks = {
+  args: {
+    ...Default.args,
+    showNavLink1: false,
+    showNavLink2: false,
+    showNavLink3: false,
+  },
+};
+
+export const NoLeftPadding = {
+  args: {
+    ...Default.args,
+    leftPadding: '0',
   },
 };
