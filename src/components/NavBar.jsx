@@ -1,5 +1,5 @@
 import React from 'react';
-import { getEmailStyles, getEmailClosingTags } from './EmailStyles';
+import { getEmailStyles, getEmailClosingTags } from './emailStyles';
 
 export const generateNavBarHTML = ({
   logoSrc = 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c190e17c507e0064a9a366/original.png',

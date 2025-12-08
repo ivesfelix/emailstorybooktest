@@ -1,5 +1,5 @@
 import React from 'react';
-import { getEmailStyles, getEmailClosingTags } from './EmailStyles';
+import { getEmailStyles, getEmailClosingTags } from './emailStyles';
 
 export const generateHeroHTML = ({
   h1 = 'Curated for you: Dollhouse Miniatures',

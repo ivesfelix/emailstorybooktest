@@ -1,5 +1,5 @@
 import React from 'react';
-import { getEmailStyles, getEmailClosingTags } from './EmailStyles';
+import { getEmailStyles, getEmailClosingTags } from './emailStyles';
 
 export const generateProductGridHTML = ({
   gridRows = 2,

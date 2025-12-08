@@ -1,5 +1,5 @@
 import React from 'react';
-import { getEmailStyles, getEmailClosingTags } from './EmailStyles';
+import { getEmailStyles, getEmailClosingTags } from './emailStyles';
 
 export const generateFooterHTML = ({
   logoSrc = 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c19142f918b60065ae9302/original.png',
