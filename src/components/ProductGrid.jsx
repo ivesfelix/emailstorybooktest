@@ -25,16 +25,16 @@ export const generateProductGridHTML = ({
 }) => {
   return `${getEmailStyles()}
             
-            <!-- Product Grid Section -->
+            <!-- Grid Section -->
     <tr>
         <td style="padding: 0 32px 24px 32px;" class="mobile-padding-grid">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <!-- Row 1 -->
                 <tr>
-                    <!-- Product 1 -->
+                    <!-- Grid 1 -->
                     <td width="50%" style="padding: 0 12px ${gridRows > 1 ? '24px' : '0'} 0;" class="grid-item-left">
                         <a href="#" style="text-decoration: none; display: block;">
-                            <img src="${grid1Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
+                            <img src="${grid1Image}" alt="Grid" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                         </a>
                         ${showGridMetadata ? `
                         <div style="padding-top: 8px;">
@@ -43,10 +43,10 @@ export const generateProductGridHTML = ({
                         </div>
                         ` : ''}
                     </td>
-                    <!-- Product 2 -->
+                    <!-- Grid 2 -->
                     <td width="50%" style="padding: 0 0 ${gridRows > 1 ? '24px' : '0'} 12px;" class="grid-item-right">
                         <a href="#" style="text-decoration: none; display: block;">
-                            <img src="${grid2Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
+                            <img src="${grid2Image}" alt="Grid" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                         </a>
                         ${showGridMetadata ? `
                         <div style="padding-top: 8px;">
@@ -59,10 +59,10 @@ export const generateProductGridHTML = ({
                 ${gridRows >= 2 ? `
                 <!-- Row 2 -->
                 <tr>
-                    <!-- Product 3 -->
+                    <!-- Grid 3 -->
                     <td width="50%" style="padding: 0 12px ${gridRows > 2 ? '24px' : '0'} 0;" class="grid-item-bottom-left">
                         <a href="#" style="text-decoration: none; display: block;">
-                            <img src="${grid3Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
+                            <img src="${grid3Image}" alt="Grid" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                         </a>
                         ${showGridMetadata ? `
                         <div style="padding-top: 8px;">
@@ -71,10 +71,10 @@ export const generateProductGridHTML = ({
                         </div>
                         ` : ''}
                     </td>
-                    <!-- Product 4 -->
+                    <!-- Grid 4 -->
                     <td width="50%" style="padding: 0 0 ${gridRows > 2 ? '24px' : '0'} 12px;" class="grid-item-bottom-right">
                         <a href="#" style="text-decoration: none; display: block;">
-                            <img src="${grid4Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
+                            <img src="${grid4Image}" alt="Grid" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                         </a>
                         ${showGridMetadata ? `
                         <div style="padding-top: 8px;">
@@ -88,10 +88,10 @@ export const generateProductGridHTML = ({
                 ${gridRows >= 3 ? `
                 <!-- Row 3 -->
                 <tr>
-                    <!-- Product 5 -->
+                    <!-- Grid 5 -->
                     <td width="50%" style="padding: 0 12px 0 0;" class="grid-item-bottom-left">
                         <a href="#" style="text-decoration: none; display: block;">
-                            <img src="${grid5Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
+                            <img src="${grid5Image}" alt="Grid" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                         </a>
                         ${showGridMetadata ? `
                         <div style="padding-top: 8px;">
@@ -100,10 +100,10 @@ export const generateProductGridHTML = ({
                         </div>
                         ` : ''}
                     </td>
-                    <!-- Product 6 -->
+                    <!-- Grid 6 -->
                     <td width="50%" style="padding: 0 0 0 12px;" class="grid-item-bottom-right">
                         <a href="#" style="text-decoration: none; display: block;">
-                            <img src="${grid6Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
+                            <img src="${grid6Image}" alt="Grid" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                         </a>
                         ${showGridMetadata ? `
                         <div style="padding-top: 8px;">

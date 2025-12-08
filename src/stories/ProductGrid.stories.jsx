@@ -19,98 +19,98 @@ export default {
     },
     showGridMetadata: {
       control: 'boolean',
-      description: 'Show/hide product titles and prices',
+      description: 'Show/hide grid titles and prices',
       table: { category: 'Layout' }
     },
     grid1Image: {
       control: 'text',
-      description: 'Product 1 image URL',
-      table: { category: 'Row 1', subcategory: 'Product 1' }
+      description: 'Grid 1 image URL',
+      table: { category: 'Row 1', subcategory: 'Grid 1' }
     },
     grid1Title: {
       control: 'text',
-      description: 'Product 1 title',
-      table: { category: 'Row 1', subcategory: 'Product 1' }
+      description: 'Grid 1 title',
+      table: { category: 'Row 1', subcategory: 'Grid 1' }
     },
     grid1Price: {
       control: 'text',
-      description: 'Product 1 price',
-      table: { category: 'Row 1', subcategory: 'Product 1' }
+      description: 'Grid 1 price',
+      table: { category: 'Row 1', subcategory: 'Grid 1' }
     },
     grid2Image: {
       control: 'text',
-      description: 'Product 2 image URL',
-      table: { category: 'Row 1', subcategory: 'Product 2' }
+      description: 'Grid 2 image URL',
+      table: { category: 'Row 1', subcategory: 'Grid 2' }
     },
     grid2Title: {
       control: 'text',
-      description: 'Product 2 title',
-      table: { category: 'Row 1', subcategory: 'Product 2' }
+      description: 'Grid 2 title',
+      table: { category: 'Row 1', subcategory: 'Grid 2' }
     },
     grid2Price: {
       control: 'text',
-      description: 'Product 2 price',
-      table: { category: 'Row 1', subcategory: 'Product 2' }
+      description: 'Grid 2 price',
+      table: { category: 'Row 1', subcategory: 'Grid 2' }
     },
     grid3Image: {
       control: 'text',
-      description: 'Product 3 image URL',
-      table: { category: 'Row 2', subcategory: 'Product 3' }
+      description: 'Grid 3 image URL',
+      table: { category: 'Row 2', subcategory: 'Grid 3' }
     },
     grid3Title: {
       control: 'text',
-      description: 'Product 3 title',
-      table: { category: 'Row 2', subcategory: 'Product 3' }
+      description: 'Grid 3 title',
+      table: { category: 'Row 2', subcategory: 'Grid 3' }
     },
     grid3Price: {
       control: 'text',
-      description: 'Product 3 price',
-      table: { category: 'Row 2', subcategory: 'Product 3' }
+      description: 'Grid 3 price',
+      table: { category: 'Row 2', subcategory: 'Grid 3' }
     },
     grid4Image: {
       control: 'text',
-      description: 'Product 4 image URL',
-      table: { category: 'Row 2', subcategory: 'Product 4' }
+      description: 'Grid 4 image URL',
+      table: { category: 'Row 2', subcategory: 'Grid 4' }
     },
     grid4Title: {
       control: 'text',
-      description: 'Product 4 title',
-      table: { category: 'Row 2', subcategory: 'Product 4' }
+      description: 'Grid 4 title',
+      table: { category: 'Row 2', subcategory: 'Grid 4' }
     },
     grid4Price: {
       control: 'text',
-      description: 'Product 4 price',
-      table: { category: 'Row 2', subcategory: 'Product 4' }
+      description: 'Grid 4 price',
+      table: { category: 'Row 2', subcategory: 'Grid 4' }
     },
     grid5Image: {
       control: 'text',
-      description: 'Product 5 image URL',
-      table: { category: 'Row 3', subcategory: 'Product 5' }
+      description: 'Grid 5 image URL',
+      table: { category: 'Row 3', subcategory: 'Grid 5' }
     },
     grid5Title: {
       control: 'text',
-      description: 'Product 5 title',
-      table: { category: 'Row 3', subcategory: 'Product 5' }
+      description: 'Grid 5 title',
+      table: { category: 'Row 3', subcategory: 'Grid 5' }
     },
     grid5Price: {
       control: 'text',
-      description: 'Product 5 price',
-      table: { category: 'Row 3', subcategory: 'Product 5' }
+      description: 'Grid 5 price',
+      table: { category: 'Row 3', subcategory: 'Grid 5' }
     },
     grid6Image: {
       control: 'text',
-      description: 'Product 6 image URL',
-      table: { category: 'Row 3', subcategory: 'Product 6' }
+      description: 'Grid 6 image URL',
+      table: { category: 'Row 3', subcategory: 'Grid 6' }
     },
     grid6Title: {
       control: 'text',
-      description: 'Product 6 title',
-      table: { category: 'Row 3', subcategory: 'Product 6' }
+      description: 'Grid 6 title',
+      table: { category: 'Row 3', subcategory: 'Grid 6' }
     },
     grid6Price: {
       control: 'text',
-      description: 'Product 6 price',
-      table: { category: 'Row 3', subcategory: 'Product 6' }
+      description: 'Grid 6 price',
+      table: { category: 'Row 3', subcategory: 'Grid 6' }
     },
   },
 };
@@ -125,17 +125,17 @@ export const TwoRows = {
     grid5Image: 'https://i.etsystatic.com/41584081/r/il/786db7/6231448617/il_765x1020.6231448617_g5yh.jpg',
     grid6Image: 'https://i.etsystatic.com/5305552/r/il/91c562/4297655234/il_1588xN.4297655234_6b82.jpg',
     showGridMetadata: false,
-    grid1Title: 'Handmade Vase',
+    grid1Title: 'Listing title',
     grid1Price: '$32.00',
-    grid2Title: 'Ceramic Bowl',
+    grid2Title: 'Listing title',
     grid2Price: '$28.00',
-    grid3Title: 'Woven Basket',
+    grid3Title: 'Listing title',
     grid3Price: '$45.00',
-    grid4Title: 'Clay Mug',
+    grid4Title: 'Listing title',
     grid4Price: '$22.00',
-    grid5Title: 'Art Print',
+    grid5Title: 'Listing title',
     grid5Price: '$18.00',
-    grid6Title: 'Throw Pillow',
+    grid6Title: 'Listing title',
     grid6Price: '$38.00',
   },
 };
