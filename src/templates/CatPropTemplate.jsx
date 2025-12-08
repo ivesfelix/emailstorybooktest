@@ -2,14 +2,7 @@ import React from 'react';
 
 // Base email template with customizable sections
 const generateEmailHTML = ({
-  h1 = 'Curated for you: Dollhouse Miniatures',
-  subtitle = 'Your personalized roundup of creative finds, specifically selected to make you smile. Browse and enjoy.',
-  heroImage = 'https://i.etsystatic.com/7721451/r/il/af962a/7354499205/il_1588xN.7354499205_3uxg.jpg',
-  heroAlt = 'Dollhouse Miniatures',
-  showHeroImage = true,
-  showHeroHeading = true,
-  showHeroSubtitle = true,
-  showHeroCTA = true,
+  navBarVariant = 'Default',
   showNavLink1 = true,
   navLink1Text = 'Trends',
   navLink1Href = '#',
@@ -19,16 +12,27 @@ const generateEmailHTML = ({
   showNavLink3 = true,
   navLink3Text = 'Deals',
   navLink3Href = '#',
+  h1 = 'Curated for you: Dollhouse Miniatures',
+  subtitle = 'Your personalized roundup of creative finds, specifically selected to make you smile. Browse and enjoy.',
+  heroImage = 'https://i.etsystatic.com/7721451/r/il/af962a/7354499205/il_1588xN.7354499205_3uxg.jpg',
+  heroAlt = 'Dollhouse Miniatures',
+  showHeroImage = true,
+  showHeroHeading = true,
+  showHeroSubtitle = true,
+  showHeroCTA = true,
+  heroButtonStyleType = 'primary',
   primaryButtonText = 'Shop now',
   primaryButtonHref = '#',
   gridRows = 2,
+  showGridCTA = true,
+  gridButtonStyleType = 'secondary',
+  showGridMetadata = false,
   grid1Image = 'https://i.etsystatic.com/41404700/r/il/8973c7/6378159666/il_800x800.6378159666_arlq.jpg',
   grid2Image = 'https://i.etsystatic.com/48233775/r/il/ef5973/5572506107/il_1588xN.5572506107_iso1.jpg',
   grid3Image = 'https://i.etsystatic.com/36006032/r/il/e610b0/4007909708/il_1588xN.4007909708_6iw3.jpg',
   grid4Image = 'https://i.etsystatic.com/11714813/c/1792/1792/1/0/il/c3d85e/5278592463/il_765x1020.5278592463_sajq.jpg',
   grid5Image = 'https://i.etsystatic.com/41584081/r/il/786db7/6231448617/il_765x1020.6231448617_g5yh.jpg',
   grid6Image = 'https://i.etsystatic.com/5305552/r/il/91c562/4297655234/il_1588xN.4297655234_6b82.jpg',
-  showGridMetadata = false,
   grid1Title = 'Product Title',
   grid1Price = '$25.00',
   grid2Title = 'Product Title',
@@ -47,7 +51,48 @@ const generateEmailHTML = ({
   evergreenDescription = '97% of Etsy sellers in the US work and create from their own home.',
   evergreenLinkText = 'Explore more →',
   evergreenLinkHref = '#',
+  footerVariant = 'BuyerMarketing',
 }) => {
+  // Apply NavBar variant settings
+  let navBarLeftPadding = '32px';
+  let navBarShowLink1 = showNavLink1;
+  let navBarShowLink2 = showNavLink2;
+  let navBarShowLink3 = showNavLink3;
+  
+  if (navBarVariant === 'NoLinks') {
+    navBarShowLink1 = false;
+    navBarShowLink2 = false;
+    navBarShowLink3 = false;
+  } else if (navBarVariant === 'NoLeftPadding') {
+    navBarLeftPadding = '0';
+  }
+  
+  const navBarRightPadding = '32px';
+  const navBarMobilePaddingStyle = navBarLeftPadding === '0' ? `padding-left: 0 !important; padding-right: 16px !important;` : `padding-left: 16px !important; padding-right: 16px !important;`;
+  
+  // Apply Hero Button styling
+  const heroIsPrimary = heroButtonStyleType === 'primary';
+  const heroButtonClass = heroIsPrimary ? 'primary-button' : 'secondary-button';
+  const heroBgColor = heroIsPrimary ? '#312b36' : 'transparent';
+  const heroTextColor = heroIsPrimary ? '#faf8f5' : '#312b36';
+  const heroBorderColor = '#312b36';
+  const heroMsoFillColor = heroIsPrimary ? '#312b36' : 'transparent';
+  const heroMsoStroke = heroIsPrimary ? 'f' : 't';
+  
+  // Apply Grid Button styling
+  const gridIsPrimary = gridButtonStyleType === 'primary';
+  const gridButtonClass = gridIsPrimary ? 'primary-button' : 'secondary-button';
+  const gridBgColor = gridIsPrimary ? '#312b36' : 'transparent';
+  const gridTextColor = gridIsPrimary ? '#faf8f5' : '#312b36';
+  const gridBorderColor = '#312b36';
+  const gridMsoFillColor = gridIsPrimary ? '#312b36' : 'transparent';
+  const gridMsoStroke = gridIsPrimary ? 'f' : 't';
+  
+  // Apply Footer variant settings
+  const footerLegalText = footerVariant === 'BuyerMarketing' 
+    ? '<p style="margin: 0 0 1.25em 0;">You are receiving this email because you registered on Etsy.com with this email address. To stop receiving Etsy marketing emails, <a href="#" style="color: #665e5c; text-decoration: underline;">unsubscribe here</a>.</p><p style="margin: 0 0 1.25em 0;">If you live in North America or South America, this email is sent by Etsy, Inc., 117 Adams Street, Brooklyn, NY, 11201, US; if you live elsewhere, this email is sent by Etsy Ireland UC, a subsidiary of Etsy, Inc., One Le Pole Square, Ship Street Great, Dublin 8, D08 E6PD, Ireland having company registration number 495696 and VAT registration number IE9777587C.</p><p style="margin: 0;">Copyright 2025 Etsy, Inc., an affiliate of Etsy Ireland UC. All rights reserved.</p>'
+    : '<p style="margin: 0 0 1.25em 0;">You are receiving this email because you registered on <a href="#" style="color: #665e5c; text-decoration: underline;">Etsy.com</a> with this email address.</p><p style="margin: 0 0 1.25em 0;">If you live in North America or South America, this email is sent by Etsy, Inc., 117 Adams Street, Brooklyn, NY, 11201, US; if you live elsewhere, this email is sent by Etsy Ireland UC, a subsidiary of Etsy, Inc., One Le Pole Square, Ship Street Great, Dublin 8, D08 E6PD, Ireland having company registration number 495696 and VAT registration number IE9777587C.</p><p style="margin: 0;">Copyright 2025 Etsy, Inc., an affiliate of Etsy Ireland UC. All rights reserved.</p>';
+  
   return `<style>
         /* ABC Diatype */
         @font-face {
@@ -163,6 +208,9 @@ const generateEmailHTML = ({
             }
             .mobile-padding-button {
                 padding: 0 16px 40px 16px !important;
+            }
+            .mobile-padding-nav {
+                ${navBarMobilePaddingStyle}
             }
             .mobile-padding-evergreen {
                 padding: 40px 16px !important;
@@ -292,7 +340,7 @@ const generateEmailHTML = ({
             
             <!-- Nav Bar -->
             <tr>
-                <td style="padding: 0 32px;" class="mobile-padding">
+                <td style="padding: 0 ${navBarRightPadding} 0 ${navBarLeftPadding};" class="mobile-padding-nav">
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
                             <td width="50" style="padding: 0; vertical-align: middle;">
@@ -302,18 +350,18 @@ const generateEmailHTML = ({
                             <td style="padding: 0 0 0 16px; text-align: right; vertical-align: middle;">
                                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="right">
                                     <tr>
-                                        ${showNavLink1 ? `
+                                        ${navBarShowLink1 ? `
                                         <td style="padding: 0 12px;">
                                             <a href="${navLink1Href}" style="color: #312b36; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; text-decoration: underline;">${navLink1Text}</a>
                                         </td>
                                         ` : ''}
-                                        ${showNavLink2 ? `
+                                        ${navBarShowLink2 ? `
                                         <td style="padding: 0 12px;">
                                             <a href="${navLink2Href}" style="color: #312b36; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; text-decoration: underline;">${navLink2Text}</a>
                                         </td>
                                         ` : ''}
-                                        ${showNavLink3 ? `
-                                        <td style="padding: 0 ${showNavLink2 || showNavLink1 ? '0' : '0'} 0 ${showNavLink2 || showNavLink1 ? '12px' : '0'};">
+                                        ${navBarShowLink3 ? `
+                                        <td style="padding: 0 ${navBarShowLink2 || navBarShowLink1 ? '0' : '0'} 0 ${navBarShowLink2 || navBarShowLink1 ? '12px' : '0'};">
                                             <a href="${navLink3Href}" style="color: #312b36; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; text-decoration: underline;">${navLink3Text}</a>
                                         </td>
                                         ` : ''}
@@ -362,15 +410,15 @@ const generateEmailHTML = ({
                                 <!-- Bulletproof Button -->
                                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="left">
                                     <tr>
-                                        <td style="border-radius: 24px; background: #312b36;">
+                                        <td style="border-radius: 24px; background: ${heroBgColor};">
                                             <!--[if mso]>
-                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${primaryButtonHref}" style="height:48px;v-text-anchor:middle;width:150px;" arcsize="56%" stroke="f" fillcolor="#312b36">
+                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${primaryButtonHref}" style="height:48px;v-text-anchor:middle;width:150px;" arcsize="56%" stroke="${heroMsoStroke}" strokecolor="${heroBorderColor}" strokeweight="1.5px" fillcolor="${heroMsoFillColor}">
                                                 <w:anchorlock/>
-                                                <center style="color:#faf8f5;font-family:'ABC Diatype', sans-serif;font-size:18px;font-weight:700;line-height:130%;">${primaryButtonText}</center>
+                                                <center style="color:${heroTextColor};font-family:'ABC Diatype', sans-serif;font-size:18px;font-weight:700;line-height:130%;">${primaryButtonText}</center>
                                             </v:roundrect>
                                             <![endif]-->
                                             <!--[if !mso]><!-->
-                                            <a href="${primaryButtonHref}" class="primary-button" style="background-color: #312b36; border: 1.5px solid #312b36; border-radius: 24px; color: #faf8f5; display: inline-block; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; line-height: 130%; text-align: center; text-decoration: none; padding: 10.5px 32px; -webkit-text-size-adjust: none; mso-hide: all;">${primaryButtonText}</a>
+                                            <a href="${primaryButtonHref}" class="${heroButtonClass}" style="background-color: ${heroBgColor}; border: 1.5px solid ${heroBorderColor}; border-radius: 24px; color: ${heroTextColor}; display: inline-block; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; line-height: 130%; text-align: center; text-decoration: none; padding: 10.5px 32px; -webkit-text-size-adjust: none; mso-hide: all;">${primaryButtonText}</a>
                                             <!--<![endif]-->
                                         </td>
                                     </tr>
@@ -474,6 +522,7 @@ const generateEmailHTML = ({
                     </table>
                 </td>
             </tr>
+            ${showGridCTA ? `
             <!-- See More Button -->
             <tr>
                 <td style="padding: 0 32px 40px 32px;" class="mobile-padding-button">
@@ -481,19 +530,20 @@ const generateEmailHTML = ({
                         <tr>
                             <td align="left" style="padding: 0;">
                                 <!--[if mso]>
-                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${secondaryButtonHref}" style="height:48px;v-text-anchor:middle;width:150px;" arcsize="56%" stroke="t" strokecolor="#312b36" strokeweight="1.5px" fillcolor="transparent">
+                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${secondaryButtonHref}" style="height:48px;v-text-anchor:middle;width:150px;" arcsize="56%" stroke="${gridMsoStroke}" strokecolor="${gridBorderColor}" strokeweight="1.5px" fillcolor="${gridMsoFillColor}">
                                     <w:anchorlock/>
-                                    <center style="color:#312b36;font-family:'ABC Diatype', sans-serif;font-size:18px;font-weight:700;line-height:130%;">${secondaryButtonText}</center>
+                                    <center style="color:${gridTextColor};font-family:'ABC Diatype', sans-serif;font-size:18px;font-weight:700;line-height:130%;">${secondaryButtonText}</center>
                                 </v:roundrect>
                                 <![endif]-->
                                 <!--[if !mso]><!-->
-                                <a href="${secondaryButtonHref}" class="secondary-button" style="background-color: transparent; border: 1.5px solid #312b36; border-radius: 24px; color: #312b36; display: inline-block; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; line-height: 130%; text-align: center; text-decoration: none; padding: 10.5px 32px; -webkit-text-size-adjust: none;">${secondaryButtonText}</a>
+                                <a href="${secondaryButtonHref}" class="${gridButtonClass}" style="background-color: ${gridBgColor}; border: 1.5px solid ${gridBorderColor}; border-radius: 24px; color: ${gridTextColor}; display: inline-block; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; line-height: 130%; text-align: center; text-decoration: none; padding: 10.5px 32px; -webkit-text-size-adjust: none;">${secondaryButtonText}</a>
                                 <!--<![endif]-->
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
+            ` : ''}
 
             <!-- Evergreen Module -->
             <tr>
@@ -610,9 +660,7 @@ const generateEmailHTML = ({
                         <!-- Legal Text -->
                         <tr>
                             <td style="font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #665e5c;" class="text-secondary">
-                                <p style="margin: 0 0 1.25em 0;">If you live in North America or South America, this email is sent by Etsy, Inc., 117 Adams Street, Brooklyn, NY, 11201, US; if you live elsewhere, this email is sent by Etsy Ireland UC, a subsidiary of Etsy, Inc., One Le Pole Square, Ship Street Great, Dublin 8, D08 E6PD, Ireland having company registration number 495696 and VAT registration number IE9777587C.</p>
-                                <p style="margin: 0 0 1.25em 0;">You are receiving this email because you registered on <a href="#" style="color: #665e5c; text-decoration: underline;">Etsy.com</a> with this email address.</p>
-                                <p style="margin: 0;">Copyright 2025 Etsy, Inc., an affiliate of Etsy Ireland UC. All rights reserved.</p>
+                                ${footerLegalText}
                             </td>
                         </tr>
                     </table>
@@ -629,7 +677,7 @@ const generateEmailHTML = ({
     </center>`;
 };
 
-export const EmailTemplate = ({ 
+export const CatPropTemplate = ({ 
   h1 = 'Curated for you: Dollhouse Miniatures',
   subtitle = 'Your personalized roundup of creative finds, specifically selected to make you smile. Browse and enjoy.',
   heroImage = 'https://via.placeholder.com/536x357/D4A574/FFFFFF?text=Hero+Image',
@@ -638,6 +686,8 @@ export const EmailTemplate = ({
   showHeroHeading = true,
   showHeroSubtitle = true,
   showHeroCTA = true,
+  heroButtonStyleType = 'primary',
+  navBarVariant = 'Default',
   showNavLink1 = true,
   navLink1Text = 'Trends',
   navLink1Href = '#',
@@ -650,13 +700,15 @@ export const EmailTemplate = ({
   primaryButtonText = 'Shop now',
   primaryButtonHref = '#',
   gridRows = 2,
+  showGridCTA = true,
+  gridButtonStyleType = 'secondary',
+  showGridMetadata = false,
   grid1Image = 'https://i.etsystatic.com/41404700/r/il/8973c7/6378159666/il_800x800.6378159666_arlq.jpg',
   grid2Image = 'https://i.etsystatic.com/48233775/r/il/ef5973/5572506107/il_1588xN.5572506107_iso1.jpg',
   grid3Image = 'https://i.etsystatic.com/36006032/r/il/e610b0/4007909708/il_1588xN.4007909708_6iw3.jpg',
   grid4Image = 'https://i.etsystatic.com/11714813/c/1792/1792/1/0/il/c3d85e/5278592463/il_765x1020.5278592463_sajq.jpg',
   grid5Image = 'https://i.etsystatic.com/41584081/r/il/786db7/6231448617/il_765x1020.6231448617_g5yh.jpg',
   grid6Image = 'https://i.etsystatic.com/5305552/r/il/91c562/4297655234/il_1588xN.4297655234_6b82.jpg',
-  showGridMetadata = false,
   grid1Title = 'Product Title',
   grid1Price = '$25.00',
   grid2Title = 'Product Title',
@@ -674,17 +726,11 @@ export const EmailTemplate = ({
   evergreenHeading = 'Shop straight from their studio',
   evergreenDescription = '97% of Etsy sellers in the US work and create from their own home.',
   evergreenLinkText = 'Explore more →',
-  evergreenLinkHref = '#'
+  evergreenLinkHref = '#',
+  footerVariant = 'BuyerMarketing',
 }) => {
   const html = generateEmailHTML({
-    h1,
-    subtitle,
-    heroImage,
-    heroAlt,
-    showHeroImage,
-    showHeroHeading,
-    showHeroSubtitle,
-    showHeroCTA,
+    navBarVariant,
     showNavLink1,
     navLink1Text,
     navLink1Href,
@@ -694,16 +740,27 @@ export const EmailTemplate = ({
     showNavLink3,
     navLink3Text,
     navLink3Href,
+    h1,
+    subtitle,
+    heroImage,
+    heroAlt,
+    showHeroImage,
+    showHeroHeading,
+    showHeroSubtitle,
+    showHeroCTA,
+    heroButtonStyleType,
     primaryButtonText,
     primaryButtonHref,
     gridRows,
+    showGridCTA,
+    gridButtonStyleType,
+    showGridMetadata,
     grid1Image,
     grid2Image,
     grid3Image,
     grid4Image,
     grid5Image,
     grid6Image,
-    showGridMetadata,
     grid1Title,
     grid1Price,
     grid2Title,
@@ -722,6 +779,7 @@ export const EmailTemplate = ({
     evergreenDescription,
     evergreenLinkText,
     evergreenLinkHref,
+    footerVariant,
   });
 
   return (
@@ -729,8 +787,8 @@ export const EmailTemplate = ({
   );
 };
 
-export const EmailTemplateHTML = (props = {}) => {
+export const CatPropTemplateHTML = (props = {}) => {
   return generateEmailHTML(props);
 };
 
-export default EmailTemplate;
+export default CatPropTemplate;

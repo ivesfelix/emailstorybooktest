@@ -11,15 +11,7 @@ export default {
     },
   },
   argTypes: {
-    buttonText: {
-      control: 'text',
-      description: 'Button text',
-    },
-    buttonHref: {
-      control: 'text',
-      description: 'Button URL',
-    },
-    buttonType: {
+    styleType: {
       control: { type: 'select' },
       options: ['primary', 'secondary'],
       description: 'Button style type',
@@ -29,41 +21,49 @@ export default {
       options: ['left', 'center'],
       description: 'Button alignment',
     },
+    buttonText: {
+      control: 'text',
+      description: 'Button text',
+    },
+    buttonHref: {
+      control: 'text',
+      description: 'Button URL',
+    },
   },
 };
 
 export const PrimaryButtonLeft = {
   args: {
+    styleType: 'primary',
+    alignment: 'left',
     buttonText: 'Shop now',
     buttonHref: '#',
-    buttonType: 'primary',
-    alignment: 'left',
   },
 };
 
 export const SecondaryButtonLeft = {
   args: {
+    styleType: 'secondary',
+    alignment: 'left',
     buttonText: 'Shop now',
     buttonHref: '#',
-    buttonType: 'secondary',
-    alignment: 'left',
   },
 };
 
 export const PrimaryButtonCentered = {
   args: {
+    styleType: 'primary',
+    alignment: 'center',
     buttonText: 'Shop now',
     buttonHref: '#',
-    buttonType: 'primary',
-    alignment: 'center',
   },
 };
 
 export const SecondaryButtonCentered = {
   args: {
+    styleType: 'secondary',
+    alignment: 'center',
     buttonText: 'Shop now',
     buttonHref: '#',
-    buttonType: 'secondary',
-    alignment: 'center',
   },
 };

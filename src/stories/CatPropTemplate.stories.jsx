@@ -1,9 +1,9 @@
 import React from 'react';
-import { EmailTemplate, EmailTemplateHTML } from '../components/EmailTemplate';
+import { CatPropTemplate, CatPropTemplateHTML } from '../templates/CatPropTemplate';
 
 export default {
   title: 'Email Templates/CatProp',
-  component: EmailTemplate,
+  component: CatPropTemplate,
   parameters: {
     layout: 'fullscreen',
     viewport: {
@@ -28,13 +28,16 @@ export default {
       },
     },
     html: {
-      transform: (code, story) => EmailTemplateHTML(story.args),
-    },
-    controls: {
-      sort: 'none'
+      transform: (code, story) => CatPropTemplateHTML(story.args),
     },
   },
   argTypes: {
+    navBarVariant: {
+      control: { type: 'select' },
+      options: ['Default', 'NoLinks', 'NoLeftPadding'],
+      description: 'NavBar variant style',
+      table: { category: 'Nav Bar', subcategory: 'Variant' }
+    },
     showNavLink1: {
       control: 'boolean',
       description: 'Show/hide nav link 1',
@@ -120,6 +123,12 @@ export default {
       description: 'Show/hide hero CTA button',
       table: { category: 'Hero', subcategory: 'CTA' }
     },
+    heroButtonStyleType: {
+      control: { type: 'select' },
+      options: ['primary', 'secondary'],
+      description: 'Hero button style type',
+      table: { category: 'Hero', subcategory: 'CTA' }
+    },
     primaryButtonText: {
       control: 'text',
       description: 'Primary CTA button text',
@@ -134,6 +143,22 @@ export default {
       control: { type: 'select' },
       options: [1, 2, 3],
       description: 'Number of grid rows to display',
+      table: { category: 'Grid' }
+    },
+    gridButtonStyleType: {
+      control: { type: 'select' },
+      options: ['primary', 'secondary'],
+      description: 'Grid button style type',
+      table: { category: 'Grid' }
+    },
+    showGridCTA: {
+      control: 'boolean',
+      description: 'Show/hide grid CTA button',
+      table: { category: 'Grid' }
+    },
+    showGridMetadata: {
+      control: 'boolean',
+      description: 'Show/hide grid metadata (title and price)',
       table: { category: 'Grid' }
     },
     grid1Image: {
@@ -167,11 +192,6 @@ export default {
       description: 'Grid 6 image URL',
       table: { category: 'Grid' },
       if: { arg: 'gridRows', eq: 3 }
-    },
-    showGridMetadata: {
-      control: 'boolean',
-      description: 'Show/hide grid metadata (title and price)',
-      table: { category: 'Grid' }
     },
     grid1Title: {
       control: 'text',
@@ -274,13 +294,19 @@ export default {
       control: 'text',
       description: 'Evergreen section link URL',
       table: { category: 'Evergreen' }
+    },
+    footerVariant: {
+      control: { type: 'select' },
+      options: ['BuyerTransactional', 'BuyerMarketing'],
+      description: 'Footer variant style (changes legal text)',
+      table: { category: 'Footer' }
     }
   }
 };
 
 export const Default = {
   args: {
-    gridRows: 2,
+    navBarVariant: 'Default',
     showNavLink1: true,
     navLink1Text: 'Trends',
     navLink1Href: '#',
@@ -298,35 +324,40 @@ export const Default = {
     subtitle: 'Your personalized roundup of creative finds, specifically selected to make you smile. Browse and enjoy.',
     heroImage: 'https://i.etsystatic.com/7721451/r/il/af962a/7354499205/il_1588xN.7354499205_3uxg.jpg',
     heroAlt: 'Dollhouse Miniatures',
+    heroButtonStyleType: 'primary',
     primaryButtonText: 'Shop now',
     primaryButtonHref: '#',
+    gridRows: 2,
+    showGridCTA: true,
+    gridButtonStyleType: 'secondary',
+    showGridMetadata: false,
     grid1Image: 'https://i.etsystatic.com/41404700/r/il/8973c7/6378159666/il_800x800.6378159666_arlq.jpg',
     grid2Image: 'https://i.etsystatic.com/48233775/r/il/ef5973/5572506107/il_1588xN.5572506107_iso1.jpg',
     grid3Image: 'https://i.etsystatic.com/36006032/r/il/e610b0/4007909708/il_1588xN.4007909708_6iw3.jpg',
     grid4Image: 'https://i.etsystatic.com/11714813/c/1792/1792/1/0/il/c3d85e/5278592463/il_765x1020.5278592463_sajq.jpg',
     grid5Image: 'https://i.etsystatic.com/41584081/r/il/786db7/6231448617/il_765x1020.6231448617_g5yh.jpg',
     grid6Image: 'https://i.etsystatic.com/5305552/r/il/91c562/4297655234/il_1588xN.4297655234_6b82.jpg',
-    showGridMetadata: false,
     grid1Title: 'Listing title',
-    grid1Price: '$24.50',
+    grid1Price: '$25.00',
     grid2Title: 'Listing title',
-    grid2Price: '$32.00',
+    grid2Price: '$25.00',
     grid3Title: 'Listing title',
-    grid3Price: '$18.75',
+    grid3Price: '$25.00',
     grid4Title: 'Listing title',
-    grid4Price: '$28.99',
+    grid4Price: '$25.00',
     grid5Title: 'Listing title',
-    grid5Price: '$22.00',
+    grid5Price: '$25.00',
     grid6Title: 'Listing title',
-    grid6Price: '$35.50',
+    grid6Price: '$25.00',
     secondaryButtonText: 'See more',
     secondaryButtonHref: '#',
     evergreenHeading: 'Shop straight from their studio',
     evergreenDescription: '97% of Etsy sellers in the US work and create from their own home.',
     evergreenLinkText: 'Explore more →',
-    evergreenLinkHref: '#'
+    evergreenLinkHref: '#',
+    footerVariant: 'BuyerMarketing',
   },
-  render: (args) => <EmailTemplate {...args} />
+  render: (args) => <CatPropTemplate {...args} />
 };
 
 

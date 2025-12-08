@@ -21,16 +21,6 @@ export default {
       description: 'Footer logo alt text',
       table: { category: 'Logo' }
     },
-    logoWidth: {
-      control: 'number',
-      description: 'Logo width in pixels',
-      table: { category: 'Logo' }
-    },
-    logoHeight: {
-      control: 'number',
-      description: 'Logo height in pixels',
-      table: { category: 'Logo' }
-    },
     showSocialSection: {
       control: 'boolean',
       description: 'Show/hide social media section',
@@ -98,8 +88,6 @@ export const BuyerTransactional = {
   args: {
     logoSrc: 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c19142f918b60065ae9302/original.png',
     logoAlt: 'Etsy',
-    logoWidth: 63,
-    logoHeight: 32,
     showSocialSection: true,
     socialLabel: "Let's be friends",
     instagramHref: '#',
@@ -119,8 +107,6 @@ export const BuyerMarketing = {
   args: {
     logoSrc: 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c19142f918b60065ae9302/original.png',
     logoAlt: 'Etsy',
-    logoWidth: 63,
-    logoHeight: 32,
     showSocialSection: true,
     socialLabel: "Let's be friends",
     instagramHref: '#',

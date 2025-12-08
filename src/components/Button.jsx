@@ -2,12 +2,12 @@ import React from 'react';
 import { getEmailStyles, getEmailClosingTags } from './emailStyles';
 
 export const generateButtonHTML = ({
+  styleType = 'secondary', // 'primary' or 'secondary'
+  alignment = 'left', // 'left' or 'center'
   buttonText = 'Click here',
   buttonHref = '#',
-  buttonType = 'secondary', // 'primary' or 'secondary'
-  alignment = 'left', // 'left' or 'center'
 }) => {
-  const isPrimary = buttonType === 'primary';
+  const isPrimary = styleType === 'primary';
   const buttonClass = isPrimary ? 'primary-button' : 'secondary-button';
   const bgColor = isPrimary ? '#312b36' : 'transparent';
   const textColor = isPrimary ? '#faf8f5' : '#312b36';

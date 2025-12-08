@@ -11,6 +11,12 @@ export default {
     },
   },
   argTypes: {
+    navBarVariant: {
+      control: { type: 'select' },
+      options: ['Default', 'NoLinks', 'NoLeftPadding'],
+      description: 'NavBar variant style',
+      table: { category: 'Variant' }
+    },
     logoSrc: {
       control: 'text',
       description: 'URL for the logo image',
@@ -76,16 +82,12 @@ export default {
       description: 'Nav link 3 URL',
       table: { category: 'Links', subcategory: 'Link 3' }
     },
-    leftPadding: {
-      control: 'text',
-      description: 'Left padding (e.g., 32px, 0)',
-      table: { category: 'Layout' }
-    },
   },
 };
 
 export const Default = {
   args: {
+    navBarVariant: 'Default',
     logoSrc: 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c190e17c507e0064a9a366/original.png',
     logoAlt: 'Logo',
     logoWidth: 50,
@@ -99,7 +101,6 @@ export const Default = {
     showNavLink3: true,
     navLink3Text: 'Deals',
     navLink3Href: '#',
-    leftPadding: '32px',
   },
 };
 

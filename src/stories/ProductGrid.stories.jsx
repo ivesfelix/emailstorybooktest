@@ -17,6 +17,17 @@ export default {
       description: 'Number of grid rows to display',
       table: { category: 'Layout' }
     },
+    showGridCTA: {
+      control: 'boolean',
+      description: 'Show/hide grid CTA button',
+      table: { category: 'Layout' }
+    },
+    gridButtonStyleType: {
+      control: { type: 'select' },
+      options: ['primary', 'secondary'],
+      description: 'Grid button style type',
+      table: { category: 'Layout' }
+    },
     showGridMetadata: {
       control: 'boolean',
       description: 'Show/hide grid titles and prices',
@@ -112,12 +123,24 @@ export default {
       description: 'Grid 6 price',
       table: { category: 'Row 3', subcategory: 'Grid 6' }
     },
+    secondaryButtonText: {
+      control: 'text',
+      description: 'Secondary CTA button text',
+      table: { category: 'Button' }
+    },
+    secondaryButtonHref: {
+      control: 'text',
+      description: 'Secondary CTA button link',
+      table: { category: 'Button' }
+    },
   },
 };
 
 export const TwoRows = {
   args: {
     gridRows: 2,
+    showGridCTA: true,
+    gridButtonStyleType: 'secondary',
     grid1Image: 'https://i.etsystatic.com/41404700/r/il/8973c7/6378159666/il_800x800.6378159666_arlq.jpg',
     grid2Image: 'https://i.etsystatic.com/48233775/r/il/ef5973/5572506107/il_1588xN.5572506107_iso1.jpg',
     grid3Image: 'https://i.etsystatic.com/36006032/r/il/e610b0/4007909708/il_1588xN.4007909708_6iw3.jpg',
@@ -126,17 +149,19 @@ export const TwoRows = {
     grid6Image: 'https://i.etsystatic.com/5305552/r/il/91c562/4297655234/il_1588xN.4297655234_6b82.jpg',
     showGridMetadata: false,
     grid1Title: 'Listing title',
-    grid1Price: '$32.00',
+    grid1Price: '$25.00',
     grid2Title: 'Listing title',
-    grid2Price: '$28.00',
+    grid2Price: '$25.00',
     grid3Title: 'Listing title',
-    grid3Price: '$45.00',
+    grid3Price: '$25.00',
     grid4Title: 'Listing title',
-    grid4Price: '$22.00',
+    grid4Price: '$25.00',
     grid5Title: 'Listing title',
-    grid5Price: '$18.00',
+    grid5Price: '$25.00',
     grid6Title: 'Listing title',
-    grid6Price: '$38.00',
+    grid6Price: '$25.00',
+    secondaryButtonText: 'See more',
+    secondaryButtonHref: '#',
   },
 };
 
