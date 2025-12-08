@@ -2,6 +2,7 @@ import React from 'react';
 
 // Base email template with customizable sections
 const generateEmailHTML = ({
+  navBarVariant = 'Default',
   h1 = 'Curated for you: Dollhouse Miniatures',
   subtitle = 'Your personalized roundup of creative finds, specifically selected to make you smile. Browse and enjoy.',
   heroImage = 'https://i.etsystatic.com/7721451/r/il/af962a/7354499205/il_1588xN.7354499205_3uxg.jpg',
