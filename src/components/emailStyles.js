@@ -101,7 +101,7 @@ export const getEmailStyles = () => `<style>
     }
     
     /* Mobile Responsive Styles */
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 599px) {
         .mobile-padding {
             padding-left: 16px !important;
             padding-right: 16px !important;
