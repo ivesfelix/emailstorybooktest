@@ -6,12 +6,34 @@ const generateEmailHTML = ({
   subtitle = 'Your personalized roundup of creative finds, specifically selected to make you smile. Browse and enjoy.',
   heroImage = 'https://i.etsystatic.com/7721451/r/il/af962a/7354499205/il_1588xN.7354499205_3uxg.jpg',
   heroAlt = 'Dollhouse Miniatures',
+  showHeroImage = true,
+  showHeroHeading = true,
+  showHeroSubtitle = true,
+  showHeroCTA = true,
+  showNavLink1 = true,
+  navLink1Text = 'Trends',
+  navLink1Href = '#',
+  showNavLink2 = true,
+  navLink2Text = 'Gifts',
+  navLink2Href = '#',
+  showNavLink3 = true,
+  navLink3Text = 'Deals',
+  navLink3Href = '#',
   primaryButtonText = 'Shop now',
   primaryButtonHref = '#',
-  product1Image = 'https://i.etsystatic.com/41404700/r/il/8973c7/6378159666/il_800x800.6378159666_arlq.jpg',
-  product2Image = 'https://i.etsystatic.com/48233775/r/il/ef5973/5572506107/il_1588xN.5572506107_iso1.jpg',
-  product3Image = 'https://i.etsystatic.com/36006032/r/il/e610b0/4007909708/il_1588xN.4007909708_6iw3.jpg',
-  product4Image = 'https://i.etsystatic.com/11714813/c/1792/1792/1/0/il/c3d85e/5278592463/il_765x1020.5278592463_sajq.jpg',
+  grid1Image = 'https://i.etsystatic.com/41404700/r/il/8973c7/6378159666/il_800x800.6378159666_arlq.jpg',
+  grid2Image = 'https://i.etsystatic.com/48233775/r/il/ef5973/5572506107/il_1588xN.5572506107_iso1.jpg',
+  grid3Image = 'https://i.etsystatic.com/36006032/r/il/e610b0/4007909708/il_1588xN.4007909708_6iw3.jpg',
+  grid4Image = 'https://i.etsystatic.com/11714813/c/1792/1792/1/0/il/c3d85e/5278592463/il_765x1020.5278592463_sajq.jpg',
+  showGridMetadata = false,
+  grid1Title = 'Product Title',
+  grid1Price = '$25.00',
+  grid2Title = 'Product Title',
+  grid2Price = '$25.00',
+  grid3Title = 'Product Title',
+  grid3Price = '$25.00',
+  grid4Title = 'Product Title',
+  grid4Price = '$25.00',
   secondaryButtonText = 'See more',
   secondaryButtonHref = '#',
   evergreenHeading = 'Shop straight from their studio',
@@ -273,15 +295,21 @@ const generateEmailHTML = ({
                             <td style="padding: 0 0 0 16px; text-align: right; vertical-align: middle;">
                                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="right">
                                     <tr>
+                                        ${showNavLink1 ? `
                                         <td style="padding: 0 12px;">
-                                            <a href="#" style="color: #312b36; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; text-decoration: underline; white-space: nowrap;">Trends</a>
+                                            <a href="${navLink1Href}" style="color: #312b36; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; text-decoration: underline;">${navLink1Text}</a>
                                         </td>
+                                        ` : ''}
+                                        ${showNavLink2 ? `
                                         <td style="padding: 0 12px;">
-                                            <a href="#" style="color: #312b36; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; text-decoration: underline; white-space: nowrap;">Gifts</a>
+                                            <a href="${navLink2Href}" style="color: #312b36; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; text-decoration: underline;">${navLink2Text}</a>
                                         </td>
-                                        <td style="padding: 0 0 0 12px;">
-                                            <a href="#" style="color: #312b36; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; text-decoration: underline; white-space: nowrap;">Deals</a>
+                                        ` : ''}
+                                        ${showNavLink3 ? `
+                                        <td style="padding: 0 ${showNavLink2 || showNavLink1 ? '0' : '0'} 0 ${showNavLink2 || showNavLink1 ? '12px' : '0'};">
+                                            <a href="${navLink3Href}" style="color: #312b36; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; text-decoration: underline;">${navLink3Text}</a>
                                         </td>
+                                        ` : ''}
                                     </tr>
                                 </table>
                             </td>
@@ -294,6 +322,7 @@ const generateEmailHTML = ({
             <tr>
                 <td style="padding: 24px 32px 40px 32px;" class="mobile-padding-hero">
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        ${showHeroImage ? `
                         <!-- Hero Image -->
                         <tr>
                             <td align="center" style="padding: 0 0 24px;">
@@ -302,18 +331,24 @@ const generateEmailHTML = ({
                                 </a>
                             </td>
                         </tr>
+                        ` : ''}
+                        ${showHeroHeading ? `
                         <!-- Hero Heading -->
                         <tr>
                             <td style="padding-bottom: 12px; font-family: 'ABC Otto', Georgia, serif; font-weight: 400; font-size: 50px; line-height: 1.05; letter-spacing: -1.5px; color: #312b36;" class="h1-mobile">
                                 ${h1}
                             </td>
                         </tr>
+                        ` : ''}
+                        ${showHeroSubtitle ? `
                         <!-- Hero Subheading -->
                         <tr>
                             <td style="padding-bottom: 24px; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.3; color: #312b36;">
                                 ${subtitle}
                             </td>
                         </tr>
+                        ` : ''}
+                        ${showHeroCTA ? `
                         <!-- Hero Button -->
                         <tr>
                             <td style="padding: 0; text-align: left;">
@@ -335,6 +370,7 @@ const generateEmailHTML = ({
                                 </table>
                             </td>
                         </tr>
+                        ` : ''}
                     </table>
                 </td>
             </tr>
@@ -348,14 +384,26 @@ const generateEmailHTML = ({
                             <!-- Product 1 -->
                             <td width="50%" style="padding: 0 12px 24px 0;" class="grid-item-left">
                                 <a href="#" style="text-decoration: none; display: block;">
-                                    <img src="${product1Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
+                                    <img src="${grid1Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                                 </a>
+                                ${showGridMetadata ? `
+                                <div style="padding-top: 8px;">
+                                    <p style="margin: 0 0 4px 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36; font-weight: 500;">${grid1Title}</p>
+                                    <p style="margin: 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36;">${grid1Price}</p>
+                                </div>
+                                ` : ''}
                             </td>
                             <!-- Product 2 -->
                             <td width="50%" style="padding: 0 0 24px 12px;" class="grid-item-right">
                                 <a href="#" style="text-decoration: none; display: block;">
-                                    <img src="${product2Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
+                                    <img src="${grid2Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                                 </a>
+                                ${showGridMetadata ? `
+                                <div style="padding-top: 8px;">
+                                    <p style="margin: 0 0 4px 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36; font-weight: 500;">${grid2Title}</p>
+                                    <p style="margin: 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36;">${grid2Price}</p>
+                                </div>
+                                ` : ''}
                             </td>
                         </tr>
                         <!-- Row 2 -->
@@ -363,14 +411,26 @@ const generateEmailHTML = ({
                             <!-- Product 3 -->
                             <td width="50%" style="padding: 0 12px 0 0;" class="grid-item-bottom-left">
                                 <a href="#" style="text-decoration: none; display: block;">
-                                    <img src="${product3Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
+                                    <img src="${grid3Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                                 </a>
+                                ${showGridMetadata ? `
+                                <div style="padding-top: 8px;">
+                                    <p style="margin: 0 0 4px 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36; font-weight: 500;">${grid3Title}</p>
+                                    <p style="margin: 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36;">${grid3Price}</p>
+                                </div>
+                                ` : ''}
                             </td>
                             <!-- Product 4 -->
                             <td width="50%" style="padding: 0 0 0 12px;" class="grid-item-bottom-right">
                                 <a href="#" style="text-decoration: none; display: block;">
-                                    <img src="${product4Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
+                                    <img src="${grid4Image}" alt="Product" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                                 </a>
+                                ${showGridMetadata ? `
+                                <div style="padding-top: 8px;">
+                                    <p style="margin: 0 0 4px 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36; font-weight: 500;">${grid4Title}</p>
+                                    <p style="margin: 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36;">${grid4Price}</p>
+                                </div>
+                                ` : ''}
                             </td>
                         </tr>
                     </table>
@@ -536,31 +596,74 @@ export const EmailTemplate = ({
   subtitle = 'Your personalized roundup of creative finds, specifically selected to make you smile. Browse and enjoy.',
   heroImage = 'https://via.placeholder.com/536x357/D4A574/FFFFFF?text=Hero+Image',
   heroAlt = 'Dollhouse Miniatures',
+  showHeroImage = true,
+  showHeroHeading = true,
+  showHeroSubtitle = true,
+  showHeroCTA = true,
+  showNavLink1 = true,
+  navLink1Text = 'Trends',
+  navLink1Href = '#',
+  showNavLink2 = true,
+  navLink2Text = 'Gifts',
+  navLink2Href = '#',
+  showNavLink3 = true,
+  navLink3Text = 'Deals',
+  navLink3Href = '#',
   primaryButtonText = 'Shop now',
   primaryButtonHref = '#',
-  product1Image = 'https://i.etsystatic.com/41404700/r/il/8973c7/6378159666/il_800x800.6378159666_arlq.jpg',
-  product2Image = 'https://i.etsystatic.com/48233775/r/il/ef5973/5572506107/il_1588xN.5572506107_iso1.jpg',
-  product3Image = 'https://i.etsystatic.com/36006032/r/il/e610b0/4007909708/il_1588xN.4007909708_6iw3.jpg',
-  product4Image = 'https://i.etsystatic.com/11714813/c/1792/1792/1/0/il/c3d85e/5278592463/il_765x1020.5278592463_sajq.jpg',
+  grid1Image = 'https://i.etsystatic.com/41404700/r/il/8973c7/6378159666/il_800x800.6378159666_arlq.jpg',
+  grid2Image = 'https://i.etsystatic.com/48233775/r/il/ef5973/5572506107/il_1588xN.5572506107_iso1.jpg',
+  grid3Image = 'https://i.etsystatic.com/36006032/r/il/e610b0/4007909708/il_1588xN.4007909708_6iw3.jpg',
+  grid4Image = 'https://i.etsystatic.com/11714813/c/1792/1792/1/0/il/c3d85e/5278592463/il_765x1020.5278592463_sajq.jpg',
+  showGridMetadata = false,
+  grid1Title = 'Product Title',
+  grid1Price = '$25.00',
+  grid2Title = 'Product Title',
+  grid2Price = '$25.00',
+  grid3Title = 'Product Title',
+  grid3Price = '$25.00',
+  grid4Title = 'Product Title',
+  grid4Price = '$25.00',
   secondaryButtonText = 'See more',
   secondaryButtonHref = '#',
   evergreenHeading = 'Shop straight from their studio',
   evergreenDescription = '97% of Etsy sellers in the US work and create from their own home.',
   evergreenLinkText = 'Explore more →',
-  evergreenLinkHref = '#',
-  templateTitle = 'Email Template'
+  evergreenLinkHref = '#'
 }) => {
   const html = generateEmailHTML({
     h1,
     subtitle,
     heroImage,
     heroAlt,
+    showHeroImage,
+    showHeroHeading,
+    showHeroSubtitle,
+    showHeroCTA,
+    showNavLink1,
+    navLink1Text,
+    navLink1Href,
+    showNavLink2,
+    navLink2Text,
+    navLink2Href,
+    showNavLink3,
+    navLink3Text,
+    navLink3Href,
     primaryButtonText,
     primaryButtonHref,
-    product1Image,
-    product2Image,
-    product3Image,
-    product4Image,
+    grid1Image,
+    grid2Image,
+    grid3Image,
+    grid4Image,
+    showGridMetadata,
+    grid1Title,
+    grid1Price,
+    grid2Title,
+    grid2Price,
+    grid3Title,
+    grid3Price,
+    grid4Title,
+    grid4Price,
     secondaryButtonText,
     secondaryButtonHref,
     evergreenHeading,
