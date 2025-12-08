@@ -1,10 +1,54 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import './preview.css';
+
+// Initialize dark mode state
+let currentColorScheme = localStorage.getItem('sb-color-scheme') || 'light';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: { expanded: true },
   docs: { source: { language: 'html' } },
+  backgrounds: { disable: true },
+  toolbar: {
+    title: { hidden: false },
+    zoom: { hidden: false },
+    eject: { hidden: false },
+    copy: { hidden: false },
+    fullscreen: { hidden: false },
+    viewport: { hidden: false },
+    'z-color-scheme-toggle/tool': { hidden: false },
+  },
+  viewport: {
+    viewports: {
+      iphone5: {
+        name: 'iPhone 5',
+        styles: {
+          width: '320px',
+          height: '568px',
+        },
+        type: 'mobile',
+        icon: 'mobile',
+      },
+      iphone14pro: {
+        name: 'iPhone 14 Pro',
+        styles: {
+          width: '393px',
+          height: '852px',
+        },
+        type: 'mobile',
+        icon: 'mobile',
+      },
+      desktop: {
+        name: 'Desktop',
+        styles: {
+          width: '1024px',
+          height: '1280px',
+        },
+        type: 'desktop',
+        icon: 'browser',
+      },
+    },
+  },
   html: {
     prettier: {
       tabWidth: 2,
@@ -22,9 +66,17 @@ export const parameters = {
   }
 };
 
+export const globalTypes = {
+  colorScheme: {
+    defaultValue: 'light',
+  },
+};
+
 // Inject styles dynamically for live updates
 export const decorators = [
-  (Story) => {
+  (Story, context) => {
+    const colorScheme = context.globals.colorScheme || 'light';
+    
     useEffect(() => {
       const styleId = 'custom-html-addon-styles';
       let style = document.getElementById(styleId);
@@ -67,6 +119,23 @@ export const decorators = [
         }
       `;
     }, []);
+    
+    useEffect(() => {
+      // Apply color scheme by adding/removing dark-mode class to all elements
+      const root = document.documentElement;
+      const body = document.body;
+      const preview = document.getElementById('storybook-root');
+      
+      if (colorScheme === 'dark') {
+        root.classList.add('dark-mode');
+        body.classList.add('dark-mode');
+        if (preview) preview.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+        body.classList.remove('dark-mode');
+        if (preview) preview.classList.remove('dark-mode');
+      }
+    }, [colorScheme]);
     
     return <Story />;
   }

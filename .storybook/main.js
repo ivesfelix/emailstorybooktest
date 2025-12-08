@@ -5,7 +5,14 @@ module.exports = {
   },
   stories: ['../src/**/*.stories.@(js|jsx|mdx)'],
   addons: [
-    '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        toolbars: {
+          viewport: { hidden: false },
+        }
+      }
+    },
     '@whitespace/storybook-addon-html'
   ],
   managerHead: (head) => `
@@ -26,6 +33,19 @@ module.exports = {
         right: 8px !important;
         z-index: 10 !important;
         margin: 0 !important;
+      }
+      
+      /* Reorder toolbar items - viewport before color scheme */
+      [data-parent-id="storybook-preview-wrapper"] {
+        display: flex !important;
+      }
+      /* Target the color scheme button and move it after viewport */
+      button[title*="Switch to"] {
+        order: 10 !important;
+      }
+      /* Viewport button */
+      button[title*="Change the size of the preview"] {
+        order: 9 !important;
       }
     </style>
   `,

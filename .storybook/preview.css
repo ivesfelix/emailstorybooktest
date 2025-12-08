@@ -43,3 +43,42 @@
 body {
   font-family: "ABC Diatype";
 }
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #1C181F;
+  color: #e0e0e0;
+}
+
+body.dark-mode {
+  background-color: #1C181F;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: #ffffff;
+}
+
+.dark-mode p,
+.dark-mode span,
+.dark-mode div {
+  color: #e0e0e0;
+}
+
+.dark-mode a {
+  color: #4a9eff;
+}
+
+.dark-mode button {
+  background-color: #333333;
+  color: #ffffff;
+  border-color: #555555;
+}
+
+.dark-mode button:hover {
+  background-color: #444444;
+}
