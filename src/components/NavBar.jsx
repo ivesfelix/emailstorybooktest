@@ -33,7 +33,6 @@ export const generateNavBarHTML = ({
   }
   
   const rightPadding = '32px';
-  const mobilePaddingStyle = navBarLeftPadding === '0' ? `padding-left: 0 !important; padding-right: 16px !important;` : `padding-left: 16px !important; padding-right: 16px !important;`;
   
   return `${getEmailStyles()}
             

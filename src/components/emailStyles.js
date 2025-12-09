@@ -107,6 +107,7 @@ export const getEmailStyles = () => `<style>
             padding-right: 16px !important;
         }
         .mobile-padding-nav {
+            padding-left: 16px !important;
             padding-right: 16px !important;
         }
         .mobile-padding-hero {
