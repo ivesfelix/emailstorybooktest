@@ -108,6 +108,18 @@ export default {
       description: 'Hero image URL',
       table: { category: 'Hero', subcategory: 'Image' }
     },
+    heroImageVariant: {
+      control: { type: 'select' },
+      options: ['padded', 'full-bleed'],
+      description: 'Hero image layout variant',
+      table: { category: 'Hero', subcategory: 'Image' }
+    },
+    heroImageRatio: {
+      control: { type: 'select' },
+      options: ['16:9', '3:2', '5:4'],
+      description: 'Hero image aspect ratio',
+      table: { category: 'Hero', subcategory: 'Image' }
+    },
     heroAlt: {
       table: { disable: true }
     },
@@ -405,6 +417,8 @@ export const Default = {
     subtitle: 'Your personalized roundup of creative finds, specifically selected to make you smile. Browse and enjoy.',
     heroImage: 'https://i.etsystatic.com/7721451/r/il/af962a/7354499205/il_1588xN.7354499205_3uxg.jpg',
     heroAlt: 'Dollhouse Miniatures',
+    heroImageVariant: 'padded',
+    heroImageRatio: '3:2',
     heroButtonStyleType: 'primary',
     primaryButtonText: 'Shop now',
     primaryButtonHref: '#',

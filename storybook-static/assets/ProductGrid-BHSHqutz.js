@@ -1,8 +1,8 @@
-import{j as _}from"./jsx-runtime-Dob27XW0.js";import"./index-uubelm5h.js";import{g as D,a as G}from"./emailStyles-CNiWnjAW.js";const P=({gridRows:t=2,showGridCTA:o=!0,gridButtonStyleType:s="secondary",grid1Image:c="https://i.etsystatic.com/41404700/r/il/8973c7/6378159666/il_800x800.6378159666_arlq.jpg",grid2Image:d="https://i.etsystatic.com/48233775/r/il/ef5973/5572506107/il_1588xN.5572506107_iso1.jpg",grid3Image:p="https://i.etsystatic.com/36006032/r/il/e610b0/4007909708/il_1588xN.4007909708_6iw3.jpg",grid4Image:f="https://i.etsystatic.com/11714813/c/1792/1792/1/0/il/c3d85e/5278592463/il_765x1020.5278592463_sajq.jpg",grid5Image:g="https://i.etsystatic.com/41584081/r/il/786db7/6231448617/il_765x1020.6231448617_g5yh.jpg",grid6Image:y="https://i.etsystatic.com/5305552/r/il/91c562/4297655234/il_1588xN.4297655234_6b82.jpg",showGridMetadata:e=!1,grid1Title:h="Product Title",grid1Price:b="$25.00",grid2Title:x="Product Title",grid2Price:m="$25.00",grid3Title:u="Product Title",grid3Price:$="$25.00",grid4Title:v="Product Title",grid4Price:A="$25.00",grid5Title:H="Product Title",grid5Price:j="$25.00",grid6Title:w="Product Title",grid6Price:k="$25.00",secondaryButtonText:r="See more",secondaryButtonHref:l="#"})=>{const i=s==="primary",C=i?"primary-button":"secondary-button",N=i?"#fd5c23":"transparent",a=i?"#ffffff":"#312b36",n=i?"#fd5c23":"#312b36",z=i?"#fd5c23":"transparent",B=i?"f":"t";return`${D()}
+import{j as B}from"./jsx-runtime-Dob27XW0.js";import"./index-uubelm5h.js";import{g as D,a as P}from"./emailStyles-518zK1lX.js";const G=({gridRows:t=2,showGridButton:o=!0,gridButtonStyleType:s="secondary",grid1Image:c="https://i.etsystatic.com/41404700/r/il/8973c7/6378159666/il_800x800.6378159666_arlq.jpg",grid2Image:d="https://i.etsystatic.com/48233775/r/il/ef5973/5572506107/il_1588xN.5572506107_iso1.jpg",grid3Image:p="https://i.etsystatic.com/36006032/r/il/e610b0/4007909708/il_1588xN.4007909708_6iw3.jpg",grid4Image:f="https://i.etsystatic.com/11714813/c/1792/1792/1/0/il/c3d85e/5278592463/il_765x1020.5278592463_sajq.jpg",grid5Image:g="https://i.etsystatic.com/41584081/r/il/786db7/6231448617/il_765x1020.6231448617_g5yh.jpg",grid6Image:y="https://i.etsystatic.com/5305552/r/il/91c562/4297655234/il_1588xN.4297655234_6b82.jpg",showGridMetadata:e=!1,grid1Title:h="Product Title",grid1Price:x="$25.00",grid2Title:b="Product Title",grid2Price:m="$25.00",grid3Title:$="Product Title",grid3Price:u="$25.00",grid4Title:v="Product Title",grid4Price:A="$25.00",grid5Title:H="Product Title",grid5Price:j="$25.00",grid6Title:k="Product Title",grid6Price:C="$25.00",secondaryButtonText:r="See more",secondaryButtonHref:l="#"})=>{const i=s==="primary",w=i?"primary-button":"secondary-button",N=i?"#fd5c23":"transparent",a=i?"#ffffff":"#312b36",n=i?"#fd5c23":"#312b36",z=i?"#fd5c23":"transparent",_=i?"f":"t";return`${D()}
             
             <!-- Grid Section -->
     <tr>
-        <td style="padding: 0 32px 24px 32px;" class="mobile-padding-grid">
+        <td style="padding: 0 32px ${o?"24px":"40px"} 32px;" class="${o?"mobile-padding-grid":"mobile-padding-grid-no-cta"}">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <!-- Row 1 -->
                 <tr>
@@ -14,7 +14,7 @@ import{j as _}from"./jsx-runtime-Dob27XW0.js";import"./index-uubelm5h.js";import
                         ${e?`
                         <div style="padding-top: 8px;">
                             <p style="margin: 0 0 4px 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36; font-weight: 500;">${h}</p>
-                            <p style="margin: 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36;">${b}</p>
+                            <p style="margin: 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36;">${x}</p>
                         </div>
                         `:""}
                     </td>
@@ -25,7 +25,7 @@ import{j as _}from"./jsx-runtime-Dob27XW0.js";import"./index-uubelm5h.js";import
                         </a>
                         ${e?`
                         <div style="padding-top: 8px;">
-                            <p style="margin: 0 0 4px 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36; font-weight: 500;">${x}</p>
+                            <p style="margin: 0 0 4px 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36; font-weight: 500;">${b}</p>
                             <p style="margin: 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36;">${m}</p>
                         </div>
                         `:""}
@@ -41,8 +41,8 @@ import{j as _}from"./jsx-runtime-Dob27XW0.js";import"./index-uubelm5h.js";import
                         </a>
                         ${e?`
                         <div style="padding-top: 8px;">
-                            <p style="margin: 0 0 4px 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36; font-weight: 500;">${u}</p>
-                            <p style="margin: 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36;">${$}</p>
+                            <p style="margin: 0 0 4px 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36; font-weight: 500;">${$}</p>
+                            <p style="margin: 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36;">${u}</p>
                         </div>
                         `:""}
                     </td>
@@ -64,7 +64,7 @@ import{j as _}from"./jsx-runtime-Dob27XW0.js";import"./index-uubelm5h.js";import
                 <!-- Row 3 -->
                 <tr>
                     <!-- Grid 5 -->
-                    <td width="50%" style="padding: 0 12px 0 0;" class="grid-item-bottom-left">
+                    <td width="50%" style="padding: 0 12px 0 0;" class="grid-item-last-left">
                         <a href="#" style="text-decoration: none; display: block;">
                             <img src="${g}" alt="Grid" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                         </a>
@@ -76,14 +76,14 @@ import{j as _}from"./jsx-runtime-Dob27XW0.js";import"./index-uubelm5h.js";import
                         `:""}
                     </td>
                     <!-- Grid 6 -->
-                    <td width="50%" style="padding: 0 0 0 12px;" class="grid-item-bottom-right">
+                    <td width="50%" style="padding: 0 0 0 12px;" class="grid-item-last-right">
                         <a href="#" style="text-decoration: none; display: block;">
                             <img src="${y}" alt="Grid" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                         </a>
                         ${e?`
                         <div style="padding-top: 8px;">
-                            <p style="margin: 0 0 4px 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36; font-weight: 500;">${w}</p>
-                            <p style="margin: 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36;">${k}</p>
+                            <p style="margin: 0 0 4px 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36; font-weight: 500;">${k}</p>
+                            <p style="margin: 0; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; color: #312b36;">${C}</p>
                         </div>
                         `:""}
                     </td>
@@ -95,18 +95,18 @@ import{j as _}from"./jsx-runtime-Dob27XW0.js";import"./index-uubelm5h.js";import
     ${o?`
     <!-- See More Button -->
     <tr>
-        <td style="padding: 0 32px;" class="mobile-padding-button">
+        <td style="padding: 0 32px 40px 32px;" class="mobile-padding-button">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="left">
                 <tr>
                     <td align="left" style="padding: 0;">
                         <!--[if mso]>
-                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${l}" style="height:48px;v-text-anchor:middle;width:150px;" arcsize="56%" stroke="${B}" strokecolor="${n}" strokeweight="1.5px" fillcolor="${z}">
+                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${l}" style="height:48px;v-text-anchor:middle;width:150px;" arcsize="56%" stroke="${_}" strokecolor="${n}" strokeweight="1.5px" fillcolor="${z}">
                             <w:anchorlock/>
                             <center style="color:${a};font-family:'ABC Diatype', sans-serif;font-size:18px;font-weight:700;line-height:130%;">${r}</center>
                         </v:roundrect>
                         <![endif]-->
                         <!--[if !mso]><!-->
-                        <a href="${l}" class="${C}" style="background-color: ${N}; border: 1.5px solid ${n}; border-radius: 24px; color: ${a}; display: inline-block; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; line-height: 130%; text-align: center; text-decoration: none; padding: 10.5px 32px; -webkit-text-size-adjust: none;">${r}</a>
+                        <a href="${l}" class="${w}" style="background-color: ${N}; border: 1.5px solid ${n}; border-radius: 24px; color: ${a}; display: inline-block; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; line-height: 130%; text-align: center; text-decoration: none; padding: 10.5px 32px; -webkit-text-size-adjust: none;">${r}</a>
                         <!--<![endif]-->
                     </td>
                 </tr>
@@ -115,4 +115,4 @@ import{j as _}from"./jsx-runtime-Dob27XW0.js";import"./index-uubelm5h.js";import
     </tr>
     `:""}
     
-${G()}`},T=t=>{const o=P(t);return _("div",{dangerouslySetInnerHTML:{__html:o}})};T.__docgenInfo={description:"",methods:[],displayName:"ProductGrid"};export{T as P,P as g};
+${P()}`},T=t=>{const o=G(t);return B("div",{dangerouslySetInnerHTML:{__html:o}})};T.__docgenInfo={description:"",methods:[],displayName:"ProductGrid"};export{T as P,G as g};

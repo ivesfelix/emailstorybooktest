@@ -117,6 +117,12 @@ export const getEmailStyles = () => `<style>
         .mobile-padding-hero {
             padding: 24px 16px 40px 16px !important;
         }
+        .mobile-padding-hero-image {
+            padding: 24px 16px 0 16px !important;
+        }
+        .mobile-padding-hero-content {
+            padding: 24px 16px 40px 16px !important;
+        }
         .mobile-padding-grid {
             padding: 0 16px 24px 16px !important;
         }
@@ -158,8 +164,20 @@ export const getEmailStyles = () => `<style>
             letter-spacing: -1.08px !important;
         }
         /* Hero Image Mobile Styles */
-        .hero-image-mobile {
+        .hero-image-mobile-3-2 {
+            height: auto !important;
+            max-width: 100% !important;
             aspect-ratio: 3 / 2 !important;
+        }
+        .hero-image-mobile-16-9 {
+            height: auto !important;
+            max-width: 100% !important;
+            aspect-ratio: 16 / 9 !important;
+        }
+        .hero-image-mobile-5-4 {
+            height: auto !important;
+            max-width: 100% !important;
+            aspect-ratio: 5 / 4 !important;
         }
         /* Footer Mobile Styles */
         .footer-social-label {

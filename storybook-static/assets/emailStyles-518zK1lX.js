@@ -116,11 +116,20 @@ const t=()=>`<style>
         .mobile-padding-hero {
             padding: 24px 16px 40px 16px !important;
         }
+        .mobile-padding-hero-image {
+            padding: 24px 16px 0 16px !important;
+        }
+        .mobile-padding-hero-content {
+            padding: 24px 16px 40px 16px !important;
+        }
         .mobile-padding-grid {
             padding: 0 16px 24px 16px !important;
         }
+        .mobile-padding-grid-no-cta {
+            padding: 0 16px 40px 16px !important;
+        }
         .mobile-padding-button {
-            padding: 0 16px !important;
+            padding: 0 16px 40px 16px !important;
         }
         .mobile-padding-evergreen {
             padding: 40px 16px !important;
@@ -136,9 +145,15 @@ const t=()=>`<style>
             padding: 0 0 12px 6px !important;
         }
         .grid-item-bottom-left {
-            padding: 0 6px 0 0 !important;
+            padding: 0 6px 12px 0 !important;
         }
         .grid-item-bottom-right {
+            padding: 0 0 12px 6px !important;
+        }
+        .grid-item-last-left {
+            padding: 0 6px 0 0 !important;
+        }
+        .grid-item-last-right {
             padding: 0 0 0 6px !important;
         }
         /* H1 Mobile Styles */
@@ -148,8 +163,20 @@ const t=()=>`<style>
             letter-spacing: -1.08px !important;
         }
         /* Hero Image Mobile Styles */
-        .hero-image-mobile {
+        .hero-image-mobile-3-2 {
+            height: auto !important;
+            max-width: 100% !important;
             aspect-ratio: 3 / 2 !important;
+        }
+        .hero-image-mobile-16-9 {
+            height: auto !important;
+            max-width: 100% !important;
+            aspect-ratio: 16 / 9 !important;
+        }
+        .hero-image-mobile-5-4 {
+            height: auto !important;
+            max-width: 100% !important;
+            aspect-ratio: 5 / 4 !important;
         }
         /* Footer Mobile Styles */
         .footer-social-label {

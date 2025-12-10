@@ -1,6 +1,6 @@
 import React from 'react';
 import { generateNavBarHTML } from './NavBar';
-import { generateHeroHTML } from './Hero';
+import { generateHeroWithImageHTML } from './HeroWithImage';
 import { generateProductGridHTML } from './ProductGrid';
 import { generateEvergreenModuleHTML } from './EvergreenModule';
 import { generateFooterHTML } from './Footer';
@@ -30,6 +30,8 @@ const generateEmailHTML = ({
   heroImage = 'https://i.etsystatic.com/7721451/r/il/af962a/7354499205/il_1588xN.7354499205_3uxg.jpg',
   heroAlt = 'Dollhouse Miniatures',
   showHeroImage = true,
+  heroImageVariant = 'padded',
+  heroImageRatio = '3:2',
   showHeroHeadline = true,
   showHeroSubtitle = true,
   showHeroButton = true,
@@ -109,12 +111,14 @@ const generateEmailHTML = ({
     navLink3Href,
   });
 
-  const heroHTML = generateHeroHTML({
+  const heroHTML = generateHeroWithImageHTML({
     headline,
     subtitle,
     heroImage,
     heroAlt,
-    showHeroImage,
+    heroImageVariant,
+    heroImageRatio,
+    imageHref: '#',
     showHeroHeadline,
     showHeroSubtitle,
     showHeroButton,
@@ -195,7 +199,7 @@ const generateEmailHTML = ({
   };
 
   const navBarContent = extractContent(navBarHTML);
-  const heroContent = extractContent(heroHTML);
+  const heroContent = showHeroImage ? extractContent(heroHTML) : '';
   const productGridContent = extractContent(productGridHTML);
   const evergreenContent = extractContent(evergreenHTML);
   const footerContent = extractContent(footerHTML);
