@@ -5,25 +5,23 @@ export default {
   title: 'Email Components/Footer',
   component: Footer,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'padded',
     html: {
       transform: (code, story) => generateFooterHTML(story.args),
     },
   },
   argTypes: {
-    logoSrc: {
+    logoImage: {
       control: 'text',
       description: 'Footer logo URL',
       table: { category: 'Logo' }
     },
     logoAlt: {
-      control: 'text',
-      description: 'Footer logo alt text',
-      table: { category: 'Logo' }
+      table: { disable: true }
     },
-    showSocialSection: {
+    showSocialIcons: {
       control: 'boolean',
-      description: 'Show/hide social media section',
+      description: 'Show/hide social media icons',
       table: { category: 'Social Media' }
     },
     socialLabel: {
@@ -32,49 +30,35 @@ export default {
       table: { category: 'Social Media' }
     },
     instagramHref: {
-      control: 'text',
-      description: 'Instagram URL',
-      table: { category: 'Social Media' }
+      table: { disable: true }
     },
     facebookHref: {
-      control: 'text',
-      description: 'Facebook URL',
-      table: { category: 'Social Media' }
+      table: { disable: true }
     },
     threadsHref: {
-      control: 'text',
-      description: 'Threads URL',
-      table: { category: 'Social Media' }
+      table: { disable: true }
     },
     pinterestHref: {
-      control: 'text',
-      description: 'Pinterest URL',
-      table: { category: 'Social Media' }
+      table: { disable: true }
     },
     tiktokHref: {
-      control: 'text',
-      description: 'TikTok URL',
-      table: { category: 'Social Media' }
+      table: { disable: true }
     },
-    showAppSection: {
+    showAppBadges: {
       control: 'boolean',
-      description: 'Show/hide app download section',
-      table: { category: 'App Download' }
+      description: 'Show/hide app store badges section',
+      table: { category: 'App Store Badges' }
     },
     appLabel: {
       control: 'text',
-      description: 'App download section label',
-      table: { category: 'App Download' }
+      description: 'App store badges section label',
+      table: { category: 'App Store Badges' }
     },
     appStoreHref: {
-      control: 'text',
-      description: 'App Store URL',
-      table: { category: 'App Download' }
+      table: { disable: true }
     },
     googlePlayHref: {
-      control: 'text',
-      description: 'Google Play URL',
-      table: { category: 'App Download' }
+      table: { disable: true }
     },
     legalText: {
       control: 'text',
@@ -86,16 +70,16 @@ export default {
 
 export const BuyerTransactional = {
   args: {
-    logoSrc: 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c19142f918b60065ae9302/original.png',
+    logoImage: 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c19142f918b60065ae9302/original.png',
     logoAlt: 'Etsy',
-    showSocialSection: true,
+    showSocialIcons: true,
     socialLabel: "Let's be friends",
     instagramHref: '#',
     facebookHref: '#',
     threadsHref: '#',
     pinterestHref: '#',
     tiktokHref: '#',
-    showAppSection: true,
+    showAppBadges: true,
     appLabel: 'Download the Etsy app',
     appStoreHref: '#',
     googlePlayHref: '#',
@@ -105,16 +89,16 @@ export const BuyerTransactional = {
 
 export const BuyerMarketing = {
   args: {
-    logoSrc: 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c19142f918b60065ae9302/original.png',
+    logoImage: 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c19142f918b60065ae9302/original.png',
     logoAlt: 'Etsy',
-    showSocialSection: true,
+    showSocialIcons: true,
     socialLabel: "Let's be friends",
     instagramHref: '#',
     facebookHref: '#',
     threadsHref: '#',
     pinterestHref: '#',
     tiktokHref: '#',
-    showAppSection: true,
+    showAppBadges: true,
     appLabel: 'Download the Etsy app',
     appStoreHref: '#',
     googlePlayHref: '#',

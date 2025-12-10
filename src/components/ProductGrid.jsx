@@ -3,7 +3,7 @@ import { getEmailStyles, getEmailClosingTags } from './emailStyles';
 
 export const generateProductGridHTML = ({
   gridRows = 2,
-  showGridCTA = true,
+  showGridButton = true,
   gridButtonStyleType = 'secondary',
   grid1Image = 'https://i.etsystatic.com/41404700/r/il/8973c7/6378159666/il_800x800.6378159666_arlq.jpg',
   grid2Image = 'https://i.etsystatic.com/48233775/r/il/ef5973/5572506107/il_1588xN.5572506107_iso1.jpg',
@@ -30,17 +30,17 @@ export const generateProductGridHTML = ({
   // Apply Grid Button styling
   const gridIsPrimary = gridButtonStyleType === 'primary';
   const gridButtonClass = gridIsPrimary ? 'primary-button' : 'secondary-button';
-  const gridBgColor = gridIsPrimary ? '#fd5c23' : '#ffffff';
+  const gridBgColor = gridIsPrimary ? '#fd5c23' : 'transparent';
   const gridTextColor = gridIsPrimary ? '#ffffff' : '#312b36';
   const gridBorderColor = gridIsPrimary ? '#fd5c23' : '#312b36';
-  const gridMsoFillColor = gridIsPrimary ? '#fd5c23' : '#ffffff';
+  const gridMsoFillColor = gridIsPrimary ? '#fd5c23' : 'transparent';
   const gridMsoStroke = gridIsPrimary ? 'f' : 't';
   
   return `${getEmailStyles()}
             
             <!-- Grid Section -->
     <tr>
-        <td style="padding: 0 32px 24px 32px;" class="mobile-padding-grid">
+        <td style="padding: 0 32px ${showGridButton ? '24px' : '40px'} 32px;" class="${showGridButton ? 'mobile-padding-grid' : 'mobile-padding-grid-no-cta'}">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <!-- Row 1 -->
                 <tr>
@@ -102,7 +102,7 @@ export const generateProductGridHTML = ({
                 <!-- Row 3 -->
                 <tr>
                     <!-- Grid 5 -->
-                    <td width="50%" style="padding: 0 12px 0 0;" class="grid-item-bottom-left">
+                    <td width="50%" style="padding: 0 12px 0 0;" class="grid-item-last-left">
                         <a href="#" style="text-decoration: none; display: block;">
                             <img src="${grid5Image}" alt="Grid" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                         </a>
@@ -114,7 +114,7 @@ export const generateProductGridHTML = ({
                         ` : ''}
                     </td>
                     <!-- Grid 6 -->
-                    <td width="50%" style="padding: 0 0 0 12px;" class="grid-item-bottom-right">
+                    <td width="50%" style="padding: 0 0 0 12px;" class="grid-item-last-right">
                         <a href="#" style="text-decoration: none; display: block;">
                             <img src="${grid6Image}" alt="Grid" style="border-radius: 8px; clear: both; display: block; width: 100%; height: auto; object-fit: cover; object-position: center; outline: none; text-decoration: none; border: 0; aspect-ratio: 1;" />
                         </a>
@@ -130,7 +130,7 @@ export const generateProductGridHTML = ({
             </table>
         </td>
     </tr>
-    ${showGridCTA ? `
+    ${showGridButton ? `
     <!-- See More Button -->
     <tr>
         <td style="padding: 0 32px 40px 32px;" class="mobile-padding-button">

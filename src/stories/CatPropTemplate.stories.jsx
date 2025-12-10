@@ -1,5 +1,5 @@
 import React from 'react';
-import { CatPropTemplate, CatPropTemplateHTML } from '../templates/CatPropTemplate';
+import { CatPropTemplate, CatPropTemplateHTML } from '../components/CatPropTemplate';
 
 export default {
   title: 'Email Templates/CatProp',
@@ -32,57 +32,72 @@ export default {
     },
   },
   argTypes: {
+    // NavBar controls
     navBarVariant: {
       control: { type: 'select' },
       options: ['Default', 'NoLinks', 'NoLeftPadding'],
       description: 'NavBar variant style',
-      table: { category: 'Nav Bar', subcategory: 'Variant' }
+      table: { category: 'NavBar' }
+    },
+    logoImage: {
+      control: 'text',
+      description: 'Logo image URL',
+      table: { category: 'NavBar', subcategory: 'Logo' }
+    },
+    logoAlt: {
+      table: { disable: true }
+    },
+    logoWidth: {
+      control: 'number',
+      description: 'Width of the logo in pixels',
+      table: { category: 'NavBar', subcategory: 'Logo' }
+    },
+    logoHeight: {
+      control: 'number',
+      description: 'Height of the logo in pixels',
+      table: { category: 'NavBar', subcategory: 'Logo' }
     },
     showNavLink1: {
       control: 'boolean',
       description: 'Show/hide nav link 1',
-      table: { category: 'Nav Bar', subcategory: 'Link 1' }
+      table: { category: 'NavBar', subcategory: 'Link 1' }
     },
     navLink1Text: {
       control: 'text',
       description: 'Nav link 1 text',
-      table: { category: 'Nav Bar', subcategory: 'Link 1' }
+      table: { category: 'NavBar', subcategory: 'Link 1' }
     },
     navLink1Href: {
-      control: 'text',
-      description: 'Nav link 1 URL',
-      table: { category: 'Nav Bar', subcategory: 'Link 1' }
+      table: { disable: true }
     },
     showNavLink2: {
       control: 'boolean',
       description: 'Show/hide nav link 2',
-      table: { category: 'Nav Bar', subcategory: 'Link 2' }
+      table: { category: 'NavBar', subcategory: 'Link 2' }
     },
     navLink2Text: {
       control: 'text',
       description: 'Nav link 2 text',
-      table: { category: 'Nav Bar', subcategory: 'Link 2' }
+      table: { category: 'NavBar', subcategory: 'Link 2' }
     },
     navLink2Href: {
-      control: 'text',
-      description: 'Nav link 2 URL',
-      table: { category: 'Nav Bar', subcategory: 'Link 2' }
+      table: { disable: true }
     },
     showNavLink3: {
       control: 'boolean',
       description: 'Show/hide nav link 3',
-      table: { category: 'Nav Bar', subcategory: 'Link 3' }
+      table: { category: 'NavBar', subcategory: 'Link 3' }
     },
     navLink3Text: {
       control: 'text',
       description: 'Nav link 3 text',
-      table: { category: 'Nav Bar', subcategory: 'Link 3' }
+      table: { category: 'NavBar', subcategory: 'Link 3' }
     },
     navLink3Href: {
-      control: 'text',
-      description: 'Nav link 3 URL',
-      table: { category: 'Nav Bar', subcategory: 'Link 3' }
+      table: { disable: true }
     },
+    
+    // Hero controls
     showHeroImage: {
       control: 'boolean',
       description: 'Show/hide hero image',
@@ -94,33 +109,31 @@ export default {
       table: { category: 'Hero', subcategory: 'Image' }
     },
     heroAlt: {
-      control: 'text',
-      description: 'Hero image alt text',
-      table: { category: 'Hero', subcategory: 'Image' }
+      table: { disable: true }
     },
-    showHeroHeading: {
+    showHeroHeadline: {
       control: 'boolean',
-      description: 'Show/hide hero heading (h1)',
-      table: { category: 'Hero', subcategory: 'Heading' }
+      description: 'Show/hide headline',
+      table: { category: 'Hero', subcategory: 'Content' }
     },
-    h1: {
+    headline: {
       control: 'text',
-      description: 'Main hero heading',
-      table: { category: 'Hero', subcategory: 'Heading' }
+      description: 'Hero headline text',
+      table: { category: 'Hero', subcategory: 'Content' }
     },
     showHeroSubtitle: {
       control: 'boolean',
-      description: 'Show/hide hero subtitle',
-      table: { category: 'Hero', subcategory: 'Subtitle' }
+      description: 'Show/hide subtitle',
+      table: { category: 'Hero', subcategory: 'Content' }
     },
     subtitle: {
       control: 'text',
-      description: 'Hero subheading text',
-      table: { category: 'Hero', subcategory: 'Subtitle' }
+      description: 'Hero subtitle text',
+      table: { category: 'Hero', subcategory: 'Content' }
     },
-    showHeroCTA: {
+    showHeroButton: {
       control: 'boolean',
-      description: 'Show/hide hero CTA button',
+      description: 'Show/hide CTA button',
       table: { category: 'Hero', subcategory: 'CTA' }
     },
     heroButtonStyleType: {
@@ -131,182 +144,248 @@ export default {
     },
     primaryButtonText: {
       control: 'text',
-      description: 'Primary CTA button text',
+      description: 'CTA button text',
       table: { category: 'Hero', subcategory: 'CTA' }
     },
     primaryButtonHref: {
-      control: 'text',
-      description: 'Primary CTA button link',
-      table: { category: 'Hero', subcategory: 'CTA' }
+      table: { disable: true }
     },
+    
+    // ProductGrid controls
     gridRows: {
       control: { type: 'select' },
       options: [1, 2, 3],
       description: 'Number of grid rows to display',
-      table: { category: 'Grid' }
+      table: { category: 'ProductGrid', subcategory: 'Layout' }
+    },
+    showGridButton: {
+      control: 'boolean',
+      description: 'Show/hide grid CTA button',
+      table: { category: 'ProductGrid', subcategory: 'Layout' }
     },
     gridButtonStyleType: {
       control: { type: 'select' },
       options: ['primary', 'secondary'],
       description: 'Grid button style type',
-      table: { category: 'Grid' }
-    },
-    showGridCTA: {
-      control: 'boolean',
-      description: 'Show/hide grid CTA button',
-      table: { category: 'Grid' }
+      table: { category: 'ProductGrid', subcategory: 'Layout' }
     },
     showGridMetadata: {
       control: 'boolean',
-      description: 'Show/hide grid metadata (title and price)',
-      table: { category: 'Grid' }
+      description: 'Show/hide grid titles and prices',
+      table: { category: 'ProductGrid', subcategory: 'Layout' }
+    },
+    secondaryButtonText: {
+      control: 'text',
+      description: 'Secondary CTA button text',
+      table: { category: 'ProductGrid', subcategory: 'Layout' }
+    },
+    secondaryButtonHref: {
+      table: { disable: true }
     },
     grid1Image: {
       control: 'text',
       description: 'Grid 1 image URL',
-      table: { category: 'Grid' }
-    },
-    grid2Image: {
-      control: 'text',
-      description: 'Grid 2 image URL',
-      table: { category: 'Grid' }
-    },
-    grid3Image: {
-      control: 'text',
-      description: 'Grid 3 image URL',
-      table: { category: 'Grid' }
-    },
-    grid4Image: {
-      control: 'text',
-      description: 'Grid 4 image URL',
-      table: { category: 'Grid' }
-    },
-    grid5Image: {
-      control: 'text',
-      description: 'Grid 5 image URL',
-      table: { category: 'Grid' },
-      if: { arg: 'gridRows', eq: 3 }
-    },
-    grid6Image: {
-      control: 'text',
-      description: 'Grid 6 image URL',
-      table: { category: 'Grid' },
-      if: { arg: 'gridRows', eq: 3 }
+      table: { category: 'ProductGrid', subcategory: 'Row 1 - Grid 1' }
     },
     grid1Title: {
       control: 'text',
       description: 'Grid 1 title',
-      table: { category: 'Grid' },
+      table: { category: 'ProductGrid', subcategory: 'Row 1 - Grid 1' },
       if: { arg: 'showGridMetadata', truthy: true }
     },
     grid1Price: {
       control: 'text',
       description: 'Grid 1 price',
-      table: { category: 'Grid' },
+      table: { category: 'ProductGrid', subcategory: 'Row 1 - Grid 1' },
       if: { arg: 'showGridMetadata', truthy: true }
+    },
+    grid2Image: {
+      control: 'text',
+      description: 'Grid 2 image URL',
+      table: { category: 'ProductGrid', subcategory: 'Row 1 - Grid 2' }
     },
     grid2Title: {
       control: 'text',
       description: 'Grid 2 title',
-      table: { category: 'Grid' },
+      table: { category: 'ProductGrid', subcategory: 'Row 1 - Grid 2' },
       if: { arg: 'showGridMetadata', truthy: true }
     },
     grid2Price: {
       control: 'text',
       description: 'Grid 2 price',
-      table: { category: 'Grid' },
+      table: { category: 'ProductGrid', subcategory: 'Row 1 - Grid 2' },
       if: { arg: 'showGridMetadata', truthy: true }
+    },
+    grid3Image: {
+      control: 'text',
+      description: 'Grid 3 image URL',
+      table: { category: 'ProductGrid', subcategory: 'Row 2 - Grid 3' }
     },
     grid3Title: {
       control: 'text',
       description: 'Grid 3 title',
-      table: { category: 'Grid' },
+      table: { category: 'ProductGrid', subcategory: 'Row 2 - Grid 3' },
       if: { arg: 'showGridMetadata', truthy: true }
     },
     grid3Price: {
       control: 'text',
       description: 'Grid 3 price',
-      table: { category: 'Grid' },
+      table: { category: 'ProductGrid', subcategory: 'Row 2 - Grid 3' },
       if: { arg: 'showGridMetadata', truthy: true }
+    },
+    grid4Image: {
+      control: 'text',
+      description: 'Grid 4 image URL',
+      table: { category: 'ProductGrid', subcategory: 'Row 2 - Grid 4' }
     },
     grid4Title: {
       control: 'text',
       description: 'Grid 4 title',
-      table: { category: 'Grid' },
+      table: { category: 'ProductGrid', subcategory: 'Row 2 - Grid 4' },
       if: { arg: 'showGridMetadata', truthy: true }
     },
     grid4Price: {
       control: 'text',
       description: 'Grid 4 price',
-      table: { category: 'Grid' },
+      table: { category: 'ProductGrid', subcategory: 'Row 2 - Grid 4' },
       if: { arg: 'showGridMetadata', truthy: true }
+    },
+    grid5Image: {
+      control: 'text',
+      description: 'Grid 5 image URL',
+      table: { category: 'ProductGrid', subcategory: 'Row 3 - Grid 5' }
     },
     grid5Title: {
       control: 'text',
       description: 'Grid 5 title',
-      table: { category: 'Grid' },
+      table: { category: 'ProductGrid', subcategory: 'Row 3 - Grid 5' },
       if: { arg: 'showGridMetadata', truthy: true }
     },
     grid5Price: {
       control: 'text',
       description: 'Grid 5 price',
-      table: { category: 'Grid' },
+      table: { category: 'ProductGrid', subcategory: 'Row 3 - Grid 5' },
       if: { arg: 'showGridMetadata', truthy: true }
+    },
+    grid6Image: {
+      control: 'text',
+      description: 'Grid 6 image URL',
+      table: { category: 'ProductGrid', subcategory: 'Row 3 - Grid 6' }
     },
     grid6Title: {
       control: 'text',
       description: 'Grid 6 title',
-      table: { category: 'Grid' },
+      table: { category: 'ProductGrid', subcategory: 'Row 3 - Grid 6' },
       if: { arg: 'showGridMetadata', truthy: true }
     },
     grid6Price: {
       control: 'text',
       description: 'Grid 6 price',
-      table: { category: 'Grid' },
+      table: { category: 'ProductGrid', subcategory: 'Row 3 - Grid 6' },
       if: { arg: 'showGridMetadata', truthy: true }
     },
-    secondaryButtonText: {
+    
+    // EvergreenModule controls
+    evergreenIcon: {
       control: 'text',
-      description: 'Secondary CTA button text',
-      table: { category: 'Grid' }
+      description: 'Icon image URL',
+      table: { category: 'EvergreenModule', subcategory: 'Icon' }
     },
-    secondaryButtonHref: {
-      control: 'text',
-      description: 'Secondary CTA button link',
-      table: { category: 'Grid' }
+    evergreenIconAlt: {
+      table: { disable: true }
+    },
+    evergreenIconWidth: {
+      control: 'number',
+      description: 'Icon width in pixels',
+      table: { category: 'EvergreenModule', subcategory: 'Icon' }
+    },
+    evergreenIconHeight: {
+      control: 'number',
+      description: 'Icon height in pixels',
+      table: { category: 'EvergreenModule', subcategory: 'Icon' }
     },
     evergreenHeading: {
       control: 'text',
-      description: 'Evergreen section heading',
-      table: { category: 'Evergreen' }
+      description: 'Module heading',
+      table: { category: 'EvergreenModule', subcategory: 'Content' }
     },
     evergreenDescription: {
       control: 'text',
-      description: 'Evergreen section description',
-      table: { category: 'Evergreen' }
+      description: 'Module description',
+      table: { category: 'EvergreenModule', subcategory: 'Content' }
     },
     evergreenLinkText: {
       control: 'text',
-      description: 'Evergreen section link text',
-      table: { category: 'Evergreen' }
+      description: 'Link text',
+      table: { category: 'EvergreenModule', subcategory: 'Link' }
     },
     evergreenLinkHref: {
-      control: 'text',
-      description: 'Evergreen section link URL',
-      table: { category: 'Evergreen' }
+      table: { disable: true }
     },
+    
+    // Footer controls
     footerVariant: {
       control: { type: 'select' },
       options: ['BuyerTransactional', 'BuyerMarketing'],
       description: 'Footer variant style (changes legal text)',
-      table: { category: 'Footer' }
-    }
+      table: { category: 'Footer'}
+    },
+    footerLogoImage: {
+      table: { disable: true }
+    },
+    footerLogoAlt: {
+      table: { disable: true }
+    },
+    footerLogoWidth: {
+      table: { disable: true }
+    },
+    footerLogoHeight: {
+      table: { disable: true }
+    },
+    showSocialSection: {
+      table: { disable: true }
+    },
+    socialLabel: {
+      table: { disable: true }
+    },
+    instagramHref: {
+      table: { disable: true }
+    },
+    facebookHref: {
+      table: { disable: true }
+    },
+    threadsHref: {
+      table: { disable: true }
+    },
+    pinterestHref: {
+      table: { disable: true }
+    },
+    tiktokHref: {
+      table: { disable: true }
+    },
+    showAppBadges: {
+      table: { disable: true }
+    },
+    appLabel: {
+      table: { disable: true }
+    },
+    appStoreHref: {
+      table: { disable: true }
+    },
+    googlePlayHref: {
+      table: { disable: true }
+    },
   }
 };
 
 export const Default = {
   args: {
+    // NavBar
     navBarVariant: 'Default',
+    logoImage: 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c190e17c507e0064a9a366/original.png',
+    logoAlt: 'Logo',
+    logoWidth: 50,
+    logoHeight: 50,
     showNavLink1: true,
     navLink1Text: 'Trends',
     navLink1Href: '#',
@@ -316,20 +395,26 @@ export const Default = {
     showNavLink3: true,
     navLink3Text: 'Deals',
     navLink3Href: '#',
+    
+    // Hero
     showHeroImage: true,
-    showHeroHeading: true,
+    showHeroHeadline: true,
     showHeroSubtitle: true,
-    showHeroCTA: true,
-    h1: 'Curated for you: Dollhouse Miniatures',
+    showHeroButton: true,
+    headline: 'Curated for you: Dollhouse Miniatures',
     subtitle: 'Your personalized roundup of creative finds, specifically selected to make you smile. Browse and enjoy.',
     heroImage: 'https://i.etsystatic.com/7721451/r/il/af962a/7354499205/il_1588xN.7354499205_3uxg.jpg',
     heroAlt: 'Dollhouse Miniatures',
     heroButtonStyleType: 'primary',
     primaryButtonText: 'Shop now',
     primaryButtonHref: '#',
+    
+    // ProductGrid
     gridRows: 2,
-    showGridCTA: true,
+    showGridButton: true,
     gridButtonStyleType: 'secondary',
+    secondaryButtonText: 'See more',
+    secondaryButtonHref: '#',
     showGridMetadata: false,
     grid1Image: 'https://i.etsystatic.com/41404700/r/il/8973c7/6378159666/il_800x800.6378159666_arlq.jpg',
     grid2Image: 'https://i.etsystatic.com/48233775/r/il/ef5973/5572506107/il_1588xN.5572506107_iso1.jpg',
@@ -337,27 +422,46 @@ export const Default = {
     grid4Image: 'https://i.etsystatic.com/11714813/c/1792/1792/1/0/il/c3d85e/5278592463/il_765x1020.5278592463_sajq.jpg',
     grid5Image: 'https://i.etsystatic.com/41584081/r/il/786db7/6231448617/il_765x1020.6231448617_g5yh.jpg',
     grid6Image: 'https://i.etsystatic.com/5305552/r/il/91c562/4297655234/il_1588xN.4297655234_6b82.jpg',
-    grid1Title: 'Listing title',
+    grid1Title: 'Product Title',
     grid1Price: '$25.00',
-    grid2Title: 'Listing title',
+    grid2Title: 'Product Title',
     grid2Price: '$25.00',
-    grid3Title: 'Listing title',
+    grid3Title: 'Product Title',
     grid3Price: '$25.00',
-    grid4Title: 'Listing title',
+    grid4Title: 'Product Title',
     grid4Price: '$25.00',
-    grid5Title: 'Listing title',
+    grid5Title: 'Product Title',
     grid5Price: '$25.00',
-    grid6Title: 'Listing title',
+    grid6Title: 'Product Title',
     grid6Price: '$25.00',
-    secondaryButtonText: 'See more',
-    secondaryButtonHref: '#',
+    
+    // EvergreenModule
     evergreenHeading: 'Shop straight from their studio',
     evergreenDescription: '97% of Etsy sellers in the US work and create from their own home.',
     evergreenLinkText: 'Explore more →',
     evergreenLinkHref: '#',
+    evergreenIcon: 'https://braze-images.com/appboy/communication/assets/image_assets/images/68a5e7f8ec01b100646c525f/original.png',
+    evergreenIconAlt: 'Shop',
+    evergreenIconWidth: 100,
+    evergreenIconHeight: 100,
+    
+    // Footer
     footerVariant: 'BuyerMarketing',
+    footerLogoImage: 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c19142f918b60065ae9302/original.png',
+    footerLogoAlt: 'Etsy',
+    footerLogoWidth: 63,
+    footerLogoHeight: 32,
+    showSocialSection: true,
+    socialLabel: "Let's be friends",
+    instagramHref: '#',
+    facebookHref: '#',
+    threadsHref: '#',
+    pinterestHref: '#',
+    tiktokHref: '#',
+    showAppBadges: true,
+    appLabel: 'Download the Etsy app',
+    appStoreHref: '#',
+    googlePlayHref: '#',
   },
   render: (args) => <CatPropTemplate {...args} />
 };
-
-

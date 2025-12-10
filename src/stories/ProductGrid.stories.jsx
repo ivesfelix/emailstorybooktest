@@ -5,7 +5,7 @@ export default {
   title: 'Email Components/ProductGrid',
   component: ProductGrid,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'padded',
     html: {
       transform: (code, story) => generateProductGridHTML(story.args),
     },
@@ -17,16 +17,16 @@ export default {
       description: 'Number of grid rows to display',
       table: { category: 'Layout' }
     },
-    showGridCTA: {
+    showGridButton: {
       control: 'boolean',
       description: 'Show/hide grid CTA button',
-      table: { category: 'Layout' }
+      table: { category: 'Button' }
     },
     gridButtonStyleType: {
       control: { type: 'select' },
       options: ['primary', 'secondary'],
       description: 'Grid button style type',
-      table: { category: 'Layout' }
+      table: { category: 'Button' }
     },
     showGridMetadata: {
       control: 'boolean',
@@ -129,9 +129,7 @@ export default {
       table: { category: 'Button' }
     },
     secondaryButtonHref: {
-      control: 'text',
-      description: 'Secondary CTA button link',
-      table: { category: 'Button' }
+      table: { disable: true }
     },
   },
 };
@@ -139,7 +137,7 @@ export default {
 export const TwoRows = {
   args: {
     gridRows: 2,
-    showGridCTA: true,
+    showGridButton: true,
     gridButtonStyleType: 'secondary',
     grid1Image: 'https://i.etsystatic.com/41404700/r/il/8973c7/6378159666/il_800x800.6378159666_arlq.jpg',
     grid2Image: 'https://i.etsystatic.com/48233775/r/il/ef5973/5572506107/il_1588xN.5572506107_iso1.jpg',

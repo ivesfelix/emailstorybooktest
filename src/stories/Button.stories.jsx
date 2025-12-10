@@ -12,22 +12,17 @@ export default {
   },
   argTypes: {
     styleType: {
-      control: { type: 'select' },
-      options: ['primary', 'secondary'],
-      description: 'Button style type',
+      table: { disable: true },
     },
     alignment: {
-      control: { type: 'select' },
-      options: ['left', 'center'],
-      description: 'Button alignment',
+      table: { disable: true },
     },
     buttonText: {
       control: 'text',
       description: 'Button text',
     },
     buttonHref: {
-      control: 'text',
-      description: 'Button URL',
+      table: { disable: true },
     },
   },
 };

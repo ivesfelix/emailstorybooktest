@@ -2,17 +2,27 @@ import React from 'react';
 import { getEmailStyles, getEmailClosingTags } from './emailStyles';
 
 export const generateHeroHTML = ({
-  h1 = 'Curated for you: Dollhouse Miniatures',
+  headline = 'Curated for you: Dollhouse Miniatures',
   subtitle = 'Your personalized roundup of creative finds, specifically selected to make you smile. Browse and enjoy.',
   heroImage = 'https://i.etsystatic.com/7721451/r/il/af962a/7354499205/il_1588xN.7354499205_3uxg.jpg',
   heroAlt = 'Dollhouse Miniatures',
   showHeroImage = true,
-  showHeroHeading = true,
+  showHeroHeadline = true,
   showHeroSubtitle = true,
-  showHeroCTA = true,
+  showHeroButton = true,
+  heroButtonStyleType = 'primary',
   primaryButtonText = 'Shop now',
   primaryButtonHref = '#',
 }) => {
+  // Apply Hero Button styling
+  const heroIsPrimary = heroButtonStyleType === 'primary';
+  const heroButtonClass = heroIsPrimary ? 'primary-button' : 'secondary-button';
+  const heroBgColor = heroIsPrimary ? '#312b36' : 'transparent';
+  const heroTextColor = heroIsPrimary ? '#faf8f5' : '#312b36';
+  const heroBorderColor = '#312b36';
+  const heroMsoFillColor = heroIsPrimary ? '#312b36' : 'transparent';
+  const heroMsoStroke = heroIsPrimary ? 'f' : 't';
+  
   return `${getEmailStyles()}
             
             <!-- Hero Section -->
@@ -29,38 +39,38 @@ export const generateHeroHTML = ({
                     </td>
                 </tr>
                 ` : ''}
-                ${showHeroHeading ? `
-                <!-- Hero Heading -->
+                ${showHeroHeadline ? `
+                <!-- Hero Headline -->
                 <tr>
                     <td style="padding-bottom: 12px; font-family: 'ABC Otto', Georgia, serif; font-weight: 400; font-size: 50px; line-height: 1.05; letter-spacing: -1.5px; color: #312b36;" class="h1-mobile">
-                        ${h1}
+                        ${headline}
                     </td>
                 </tr>
                 ` : ''}
                 ${showHeroSubtitle ? `
-                <!-- Hero Subheading -->
+                <!-- Hero Subtitle -->
                 <tr>
-                    <td style="padding-bottom: 24px; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.3; color: #312b36;">
+                    <td style="padding-bottom: ${showHeroButton ? '24px' : '0'}; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.3; color: #312b36;">
                         ${subtitle}
                     </td>
                 </tr>
                 ` : ''}
-                ${showHeroCTA ? `
+                ${showHeroButton ? `
                 <!-- Hero Button -->
                 <tr>
                     <td style="padding: 0; text-align: left;">
                         <!-- Bulletproof Button -->
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="left">
                             <tr>
-                                <td style="border-radius: 24px; background: #312b36;">
+                                <td style="border-radius: 24px; background: ${heroBgColor};">
                                     <!--[if mso]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${primaryButtonHref}" style="height:48px;v-text-anchor:middle;width:150px;" arcsize="56%" stroke="f" fillcolor="#312b36">
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${primaryButtonHref}" style="height:48px;v-text-anchor:middle;width:150px;" arcsize="56%" stroke="${heroMsoStroke}" strokecolor="${heroBorderColor}" strokeweight="1.5px" fillcolor="${heroMsoFillColor}">
                                         <w:anchorlock/>
-                                        <center style="color:#faf8f5;font-family:'ABC Diatype', sans-serif;font-size:18px;font-weight:700;line-height:130%;">${primaryButtonText}</center>
+                                        <center style="color:${heroTextColor};font-family:'ABC Diatype', sans-serif;font-size:18px;font-weight:700;line-height:130%;">${primaryButtonText}</center>
                                     </v:roundrect>
                                     <![endif]-->
                                     <!--[if !mso]><!-->
-                                    <a href="${primaryButtonHref}" class="primary-button" style="background-color: #312b36; border: 1.5px solid #312b36; border-radius: 24px; color: #faf8f5; display: inline-block; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; line-height: 130%; text-align: center; text-decoration: none; padding: 10.5px 32px; -webkit-text-size-adjust: none; mso-hide: all;">${primaryButtonText}</a>
+                                    <a href="${primaryButtonHref}" class="${heroButtonClass}" style="background-color: ${heroBgColor}; border: 1.5px solid ${heroBorderColor}; border-radius: 24px; color: ${heroTextColor}; display: inline-block; font-family: 'ABC Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; line-height: 130%; text-align: center; text-decoration: none; padding: 10.5px 32px; -webkit-text-size-adjust: none; mso-hide: all;">${primaryButtonText}</a>
                                     <!--<![endif]-->
                                 </td>
                             </tr>

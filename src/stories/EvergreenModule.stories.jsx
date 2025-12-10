@@ -5,7 +5,7 @@ export default {
   title: 'Email Components/EvergreenModule',
   component: EvergreenModule,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'padded',
     html: {
       transform: (code, story) => generateEvergreenModuleHTML(story.args),
     },
@@ -17,9 +17,7 @@ export default {
       table: { category: 'Icon' }
     },
     evergreenIconAlt: {
-      control: 'text',
-      description: 'Icon alt text',
-      table: { category: 'Icon' }
+      table: { disable: true }
     },
     evergreenIconWidth: {
       control: 'number',
@@ -44,12 +42,10 @@ export default {
     evergreenLinkText: {
       control: 'text',
       description: 'Link text',
-      table: { category: 'Link' }
+      table: { category: 'Content' }
     },
     evergreenLinkHref: {
-      control: 'text',
-      description: 'Link URL',
-      table: { category: 'Link' }
+      table: { disable: true }
     },
   },
 };

@@ -100,12 +100,17 @@ const t=()=>`<style>
     }
     
     /* Mobile Responsive Styles */
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 599px) {
         .mobile-padding {
             padding-left: 16px !important;
             padding-right: 16px !important;
         }
         .mobile-padding-nav {
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+        }
+        .mobile-padding-nav-no-left {
+            padding-left: 0 !important;
             padding-right: 16px !important;
         }
         .mobile-padding-hero {
@@ -115,7 +120,7 @@ const t=()=>`<style>
             padding: 0 16px 24px 16px !important;
         }
         .mobile-padding-button {
-            padding: 0 16px 40px 16px !important;
+            padding: 0 16px !important;
         }
         .mobile-padding-evergreen {
             padding: 40px 16px !important;

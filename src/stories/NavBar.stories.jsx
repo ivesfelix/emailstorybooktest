@@ -5,36 +5,18 @@ export default {
   title: 'Email Components/NavBar',
   component: NavBar,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'padded',
     html: {
       transform: (code, story) => generateNavBarHTML(story.args),
     },
   },
   argTypes: {
     navBarVariant: {
-      control: { type: 'select' },
-      options: ['Default', 'NoLinks', 'NoLeftPadding'],
-      description: 'NavBar variant style',
-      table: { category: 'Variant' }
+      table: { disable: true }
     },
-    logoSrc: {
+    logoImage: {
       control: 'text',
       description: 'URL for the logo image',
-      table: { category: 'Logo' }
-    },
-    logoAlt: {
-      control: 'text',
-      description: 'Alt text for the logo',
-      table: { category: 'Logo' }
-    },
-    logoWidth: {
-      control: 'number',
-      description: 'Width of the logo in pixels',
-      table: { category: 'Logo' }
-    },
-    logoHeight: {
-      control: 'number',
-      description: 'Height of the logo in pixels',
       table: { category: 'Logo' }
     },
     showNavLink1: {
@@ -87,11 +69,7 @@ export default {
 
 export const Default = {
   args: {
-    navBarVariant: 'Default',
     logoSrc: 'https://braze-images.com/appboy/communication/assets/image_assets/images/68c190e17c507e0064a9a366/original.png',
-    logoAlt: 'Logo',
-    logoWidth: 50,
-    logoHeight: 50,
     showNavLink1: true,
     navLink1Text: 'Trends',
     navLink1Href: '#',
@@ -116,6 +94,6 @@ export const NoLinks = {
 export const NoLeftPadding = {
   args: {
     ...Default.args,
-    leftPadding: '0',
+    navBarVariant: 'NoLeftPadding',
   },
 };

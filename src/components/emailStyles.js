@@ -110,11 +110,18 @@ export const getEmailStyles = () => `<style>
             padding-left: 16px !important;
             padding-right: 16px !important;
         }
+        .mobile-padding-nav-no-left {
+            padding-left: 0 !important;
+            padding-right: 16px !important;
+        }
         .mobile-padding-hero {
             padding: 24px 16px 40px 16px !important;
         }
         .mobile-padding-grid {
             padding: 0 16px 24px 16px !important;
+        }
+        .mobile-padding-grid-no-cta {
+            padding: 0 16px 40px 16px !important;
         }
         .mobile-padding-button {
             padding: 0 16px 40px 16px !important;
@@ -133,9 +140,15 @@ export const getEmailStyles = () => `<style>
             padding: 0 0 12px 6px !important;
         }
         .grid-item-bottom-left {
-            padding: 0 6px 0 0 !important;
+            padding: 0 6px 12px 0 !important;
         }
         .grid-item-bottom-right {
+            padding: 0 0 12px 6px !important;
+        }
+        .grid-item-last-left {
+            padding: 0 6px 0 0 !important;
+        }
+        .grid-item-last-right {
             padding: 0 0 0 6px !important;
         }
         /* H1 Mobile Styles */
